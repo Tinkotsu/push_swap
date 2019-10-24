@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 17:18:41 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/24 17:54:14 by ifran            ###   ########.fr       */
+/*   Updated: 2019/10/24 18:12:04 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	validate(char *str)
 {
-	while(str)
+	while(*str)
 	{
 		if (*str < '0' || *str > '9')
 			error();
@@ -24,12 +24,14 @@ static void	validate(char *str)
 
 static void	add_elem(char *str, t_ps *ps)
 {
-	t_st *new;
-	t_st *temp;
+	t_st	*new;
+	t_st	*temp;
+	int		num;
 
 	if (!(new = (t_st *)malloc(sizeof(t_st))))
 		error();
-	new->n = ft_atoi(str);
+	num = ft_atoi(str);
+	new->n = num;
 	new->next = NULL;
 	if (!(ps->stack_a))
 		ps->stack_a = new;
@@ -37,24 +39,31 @@ static void	add_elem(char *str, t_ps *ps)
 	{
 		temp = ps->stack_a;
 		while (temp->next)
+		{
+			if (temp->n == num || temp->next->n == num)
+				error();
 			temp = temp->next;
+		}
 		temp->next = new;
 	}
 }
 
-int			main(char **argv, int argc)
+int			main(int argc, char **argv)
 {
 	t_ps	*ps;
+	int		i;
 
+	i = 1;
 	if (!(ps = (t_ps *)malloc(sizeof(t_ps))))
 		error();
 	ps->stack_a = NULL;
 	ps->stack_b = NULL;
-	while (*argv)
+	while (argv[i])
 	{
-		validate(*argv);
-		add_elem(*argv, ps);
-		++argv;
+		validate(argv[i]);
+		add_elem(argv[i], ps);
+		++i;
 	}
+	//поехали делать всё остальное, что нужно
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 16:31:03 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/24 17:54:37 by ifran            ###   ########.fr       */
+/*   Updated: 2019/10/24 18:03:53 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 # define PUSH_SWAP_H
 
+# include "libft.h"
 # include <stdlib.h>
-# include <stdio.h>
+# include <unistd.h>
 
 typedef	struct	s_st //структура стэка
 {
