@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 17:43:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/12 09:08:27 by tinkotsu         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:33:41 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				**ft_sort_params(int argc, char **argv);
 int					ft_sqrt(int nb);
-t_list				*ft_lstpushback(t_list *lst, t_list *new_list);
+void				ft_lstpushback(t_list **lst, t_list *new_list);
 void				ft_lstfree(t_list **lst);
 
 #endif
