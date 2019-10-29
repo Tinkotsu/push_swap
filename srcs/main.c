@@ -42,9 +42,9 @@ static void	add_elem(char *str, t_ps *s)
 		temp = s->stack_a;
 		while (temp->next)
 		{
-			if (temp->next->n == num)
-				error();
 			temp = temp->next;
+			if (temp->n == num)
+				error();
 		}
 		temp->next = new;
 	}
