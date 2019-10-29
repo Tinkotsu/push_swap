@@ -66,5 +66,6 @@ int			main(int argc, char **argv)
 		add_elem(argv[i], s);
 		++i;
 	}
+	test(s);
 	return (0);
 }
