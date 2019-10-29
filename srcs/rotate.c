@@ -11,6 +11,7 @@ void	ra(t_ps *s)
 	while (temp->next)
 		temp = temp->next;
 	temp->next = s->stack_a;
+	temp->next->next = NULL;
 }
 
 void	rb(t_ps *s)
@@ -22,6 +23,7 @@ void	rb(t_ps *s)
 	while (temp->next)
 		temp = temp->next;
 	temp->next = s->stack_b;
+	temp->next->next = NULL;
 }
 
 void	rr(t_ps *s)
