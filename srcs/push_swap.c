@@ -52,6 +52,7 @@ int			main(int argc, char **argv)
 {
 	t_ps	*s;
 	int		i;
+	int		n;
 
 	i = 1;
 	if (!(s = (t_ps *)malloc(sizeof(t_ps))))
@@ -66,7 +67,8 @@ int			main(int argc, char **argv)
 	}
 	while (s->stack_a)
 	{
-		printf("%d\n", s->stack_a->n);
+		n = s->stack_a->n;
+		printf("%d\n", n);
 		s->stack_a = s->stack_a->next;
 	}
 	return (0);
