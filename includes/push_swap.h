@@ -31,5 +31,16 @@ typedef struct	s_ps //структура с указателями на два �
 }				t_ps;
 
 void			error(void);
+void			pa(t_ps *s);
+void			pb(t_ps *s);
+void			sa(t_ps *s);
+void			sb(t_ps *s);
+void			ss(t_ps *s);
+void			ra(t_ps *s);
+void			rb(t_ps *s);
+void			rr(t_ps *s);
+void			rra(t_ps *s);
+void			rrb(t_ps *s);
+void			rrr(t_ps *s);
 
 #endif
