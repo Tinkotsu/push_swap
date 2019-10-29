@@ -28,6 +28,6 @@ void	sb(t_ps *s)
 
 void	ss(t_ps *s)
 {
-	s_a(s);
-	s_b(s);
+	sa(s);
+	sb(s);
 }

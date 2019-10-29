@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 static void	validate(char *str)
 {
@@ -52,7 +53,7 @@ int			main(int argc, char **argv)
 {
 	t_ps	*s;
 	int		i;
-	int		n;
+	int		n; //убрать потом
 
 	i = 1;
 	if (!(s = (t_ps *)malloc(sizeof(t_ps))))
@@ -65,11 +66,21 @@ int			main(int argc, char **argv)
 		add_elem(argv[i], s);
 		++i;
 	}
+	sa(s);
+	printf("PRINT STACK A\n");
 	while (s->stack_a)
 	{
 		n = s->stack_a->n;
 		printf("%d\n", n);
 		s->stack_a = s->stack_a->next;
+	}
+	printf("-----------------------------------\n");
+    	printf("PRINT STACK B\n");
+	while (s->stack_b)
+	{
+		n = s->stack_b->n;
+		printf("%d\n", n);
+		s->stack_b = s->stack_b->next;
 	}
 	return (0);
 }
