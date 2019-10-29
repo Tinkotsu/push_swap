@@ -74,8 +74,7 @@ int			main(int argc, char **argv)
 		printf("%d\n", n);
 		s->stack_a = s->stack_a->next;
 	}
-	printf("-----------------------------------\n");
-    	printf("PRINT STACK B\n");
+    printf("PRINT STACK B\n");
 	while (s->stack_b)
 	{
 		n = s->stack_b->n;

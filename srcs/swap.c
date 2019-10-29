@@ -8,9 +8,9 @@ void	sa(t_ps *s)
 
 	if (s->stack_a && s->stack_a->next)
 	{
-		temp = s->stack_a->next;
-		s->stack_a->next = s->stack_a;
-		s->stack_a = temp;
+		temp = s->stack_a;
+		s->stack_a = temp->next;
+		s->stack_a->next = temp;
 	}
 }
 
