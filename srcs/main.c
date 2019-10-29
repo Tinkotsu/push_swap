@@ -37,14 +37,14 @@ static void	add_elem(char *str, t_ps *s)
 		s->stack_a = new;
 	else
 	{
-		if (s->stack_a->n == num)
-			error();
 		temp = s->stack_a;
-		while (temp->next)
+		while (1)
 		{
-			temp = temp->next;
 			if (temp->n == num)
 				error();
+			if (!temp->next)
+				break ;
+			temp = temp->next;
 		}
 		temp->next = new;
 	}
