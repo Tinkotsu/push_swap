@@ -4,13 +4,16 @@
 
 void	sa(t_ps *s)
 {
-	t_st *temp;
+	t_st *temp1;
+	t_st *temp2;
 
 	if (s->stack_a && s->stack_a->next)
 	{
-		temp = s->stack_a;
-		s->stack_a = temp->next;
-		s->stack_a->next = temp;
+		temp1 = s->stack_a;
+		temp2 = s->stack_a->next;
+		temp1->next = temp2->next;
+		s->stack_a = temp2;
+		s->stack_a->next = temp1;
 	}
 }
 
