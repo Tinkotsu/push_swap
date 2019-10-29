@@ -22,7 +22,7 @@ static void	validate(char *str)
 	}
 }
 
-static void	add_elem(char *str, t_ps *s)
+static void	push_elem(char *str, t_ps *s)
 {
 	t_st	*new;
 	t_st	*temp;
@@ -50,7 +50,7 @@ static void	add_elem(char *str, t_ps *s)
 	}
 }
 
-int			main(int argc, char **argv)
+int			ps_main(int argc, char **argv)
 {
 	t_ps	*s;
 	int		i;
@@ -63,7 +63,7 @@ int			main(int argc, char **argv)
 	while (argv[i])
 	{
 		validate(argv[i]);
-		add_elem(argv[i], s);
+		push_elem(argv[i], s);
 		++i;
 	}
 	test(s);

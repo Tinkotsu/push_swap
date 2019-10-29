@@ -30,7 +30,7 @@ typedef struct	s_ps //структура с указателями на два �
 	t_st	*stack_b;
 }				t_ps;
 
-int				main(int argc, char **argv);
+int				ps_main(int argc, char **argv);
 void			error(void);
 void			pa(t_ps *s);
 void			pb(t_ps *s);
