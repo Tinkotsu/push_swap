@@ -53,8 +53,7 @@ int			main(int argc, char **argv)
 {
 	t_ps	*s;
 	int		i;
-	int		n; //убрать потом
-
+	
 	i = 1;
 	if (!(s = (t_ps *)malloc(sizeof(t_ps))))
 		error();
@@ -65,21 +64,6 @@ int			main(int argc, char **argv)
 		validate(argv[i]);
 		add_elem(argv[i], s);
 		++i;
-	}
-	sa(s);
-	printf("PRINT STACK A\n");
-	while (s->stack_a)
-	{
-		n = s->stack_a->n;
-		printf("%d\n", n);
-		s->stack_a = s->stack_a->next;
-	}
-    printf("PRINT STACK B\n");
-	while (s->stack_b)
-	{
-		n = s->stack_b->n;
-		printf("%d\n", n);
-		s->stack_b = s->stack_b->next;
 	}
 	return (0);
 }
