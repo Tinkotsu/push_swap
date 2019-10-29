@@ -4,34 +4,34 @@
 
 void	rra(t_ps *s)
 {
-	t_st *temp;
-	t_st *prev;
+	t_st *head;
+	t_st *tail;
 
-	temp = s->stack_a;
-	while (temp->next)
+	head = s->stack_a;
+	while (head->next)
 	{
-		prev = temp;
-		temp = temp->next;
+		tail = head;
+		head = head->next;
 	}
-	prev->next = NULL;
-	temp->next = s->stack_a;
-	s->stack_a = temp;
+	tail->next = NULL;
+	head->next = s->stack_a;
+	s->stack_a = head;
 }
 
 void	rrb(t_ps *s)
 {
-	t_st *temp;
-	t_st *prev;
+	t_st *head;
+	t_st *tail;
 
-	temp = s->stack_b;
-	while (temp->next)
+	head = s->stack_b;
+	while (head->next)
 	{
-		prev = temp;
-		temp = temp->next;
+		tail = head;
+		head = head->next;
 	}
-	prev->next = NULL;
-	temp->next = s->stack_b;
-	s->stack_b = temp;
+	tail->next = NULL;
+	head->next = s->stack_b;
+	s->stack_b = head;
 }
 
 void	rrr(t_ps *s)

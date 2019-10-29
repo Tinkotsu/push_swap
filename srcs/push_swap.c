@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static void	validate(char *str)
 {
@@ -53,7 +52,7 @@ int			main(int argc, char **argv)
 {
 	t_ps	*s;
 	int		i;
-	
+
 	i = 1;
 	if (!(s = (t_ps *)malloc(sizeof(t_ps))))
 		error();
