@@ -22,7 +22,7 @@ static void	validate(char *str)
 	}
 }
 
-static void	add_elem(char *str, t_ps *ps)
+static void	add_elem(char *str, t_ps *s)
 {
 	t_st	*new;
 	t_st	*temp;
@@ -33,11 +33,11 @@ static void	add_elem(char *str, t_ps *ps)
 	num = ft_atoi(str);
 	new->n = num;
 	new->next = NULL;
-	if (!(ps->stack_a))
-		ps->stack_a = new;
+	if (!(s->stack_a))
+		s->stack_a = new;
 	else
 	{
-		temp = ps->stack_a;
+		temp = s->stack_a;
 		while (temp->next)
 		{
 			if (temp->n == num || temp->next->n == num)
@@ -50,20 +50,24 @@ static void	add_elem(char *str, t_ps *ps)
 
 int			main(int argc, char **argv)
 {
-	t_ps	*ps;
+	t_ps	*s;
 	int		i;
 
 	i = 1;
-	if (!(ps = (t_ps *)malloc(sizeof(t_ps))))
+	if (!(s = (t_ps *)malloc(sizeof(t_ps))))
 		error();
-	ps->stack_a = NULL;
-	ps->stack_b = NULL;
+	s->stack_a = NULL;
+	s->stack_b = NULL;
 	while (argv[i])
 	{
 		validate(argv[i]);
-		add_elem(argv[i], ps);
+		add_elem(argv[i], s);
 		++i;
 	}
-	//поехали делать всё остальное, что нужно
+	while (s->stack_a)
+	{
+		printf("%d\n", s->stack_a->n);
+		s->stack_a = s->stack_a->next;
+	}
 	return (0);
 }

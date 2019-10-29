@@ -42,5 +42,6 @@ void			rr(t_ps *s);
 void			rra(t_ps *s);
 void			rrb(t_ps *s);
 void			rrr(t_ps *s);
+int				main(int argc, char **argv);
 
 #endif
