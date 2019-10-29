@@ -46,7 +46,7 @@ void	sa(t_ps *s)
 	}
 }
 
-void	sa(t_ps *s)
+void	sb(t_ps *s)
 {
 	t_st *temp;
 
