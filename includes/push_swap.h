@@ -18,20 +18,22 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef	struct	s_st //структура стэка
+typedef	struct	s_st
 {
 	int			n;
 	struct s_st	*next;
 }				t_st;
 
-typedef struct	s_ps //структура с указателями на два стэка
+typedef struct	s_ps
 {
 	t_st	*stack_a;
 	t_st	*stack_b;
 }				t_ps;
 
-int				ps_main(int argc, char **argv);
-void			error(void);
+int				is_r_sorted(t_st *stack);
+int				is_sorted(t_st *stack);
+int				main(int argc, char **argv);
+void			error(void); //уточнить про вывод ошибки
 void			pa(t_ps *s);
 void			pb(t_ps *s);
 void			sa(t_ps *s);

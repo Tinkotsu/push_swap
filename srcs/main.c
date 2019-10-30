@@ -14,6 +14,8 @@
 
 static void	validate(char *str)
 {
+	if (*str == '+' || *str == '-')
+		++str;
 	while(*str)
 	{
 		if (*str < '0' || *str > '9')
@@ -50,7 +52,7 @@ static void	push_elem(char *str, t_ps *s)
 	}
 }
 
-int			ps_main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	t_ps	*s;
 	int		i;
@@ -66,6 +68,6 @@ int			ps_main(int argc, char **argv)
 		push_elem(argv[i], s);
 		++i;
 	}
-	test(s);
+	push_swap(s);
 	return (0);
 }
