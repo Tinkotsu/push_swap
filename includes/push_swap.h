@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 16:31:03 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/24 18:03:53 by ifran            ###   ########.fr       */
+/*   Updated: 2019/10/30 23:42:09 by tinkotsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,7 @@ void			rra(t_ps *s);
 void			rrb(t_ps *s);
 void			rrr(t_ps *s);
 void			push_swap(t_ps *s);
+void 			test(t_ps *s);
+
 
 #endif

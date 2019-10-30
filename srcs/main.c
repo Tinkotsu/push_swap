@@ -69,5 +69,6 @@ int			main(int argc, char **argv)
 		++i;
 	}
 	push_swap(s);
+//	test(s);
 	return (0);
 }

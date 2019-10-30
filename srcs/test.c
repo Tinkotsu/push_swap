@@ -3,10 +3,14 @@
 
 void test(t_ps *s)
 {
-    sa(s);
-    while (s->stack_a)
+	t_st *temp;
+
+	temp = s->stack_a;
+	if (!temp)
+		return ;
+    while (temp)
     {
-		printf("%d\n", s->stack_a->n);
-		s->stack_a = s->stack_a->next;
+		printf("%d\n", temp->n);
+		temp = temp->next;
     }
 }
