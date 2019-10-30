@@ -30,6 +30,11 @@ typedef struct	s_ps
 	t_st	*stack_b;
 }				t_ps;
 
+//отсортировать функции внизу, некрасиво :(
+
+size_t			stack_len(t_st *stack_a);
+int				find_min(t_st *stack);
+int				find_max(t_st *stack);
 int				is_r_sorted(t_st *stack);
 int				is_sorted(t_st *stack);
 int				main(int argc, char **argv);
