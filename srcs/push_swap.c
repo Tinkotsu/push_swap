@@ -27,7 +27,8 @@ static void	leave_three(t_ps *s)
 
 	min = find_min(s->stack_a);
 	max = find_max(s->stack_a);
-	len = stack_len(s->stack_a);
+	if (!(len = stack_len(s->stack_a)))
+		return ;
 	while (len > 3)
 	{
 		if (s->stack_a->n == min)
