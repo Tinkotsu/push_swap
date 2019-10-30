@@ -48,7 +48,27 @@ static void	leave_three(t_ps *s)
 	sort_three(s, min, max);
 }
 
+int			check_stack(t_st *s)
+{
+	int min;
+
+	if (is_sorted(s))
+		return (1);
+	if (is_r_sorted(s))
+	{
+		min = find_min(s);
+		while (s->n != min)
+		{
+			ra(s);
+			write(1, "ra\n", 3);
+		}
+		return (1);
+	}
+	return (0);
+}
+
 void		push_swap(t_ps *s)
 {
-	leave_three(s);
+	if (!(check_stack(s->stack_a)))
+		leave_three(s);
 }
