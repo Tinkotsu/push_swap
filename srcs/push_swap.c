@@ -6,6 +6,7 @@ static void	sort_three(t_ps *s, int min, int max)
 {
 	if (!(is_sorted(s->stack_a) || is_r_sorted(s->stack_a)))
 	{
+		test(s);
 		if (s->stack_a->n == max || s->stack_a->n == min)
 		{
 			ra(s);
