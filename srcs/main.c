@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 17:18:41 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/24 18:12:04 by ifran            ###   ########.fr       */
+/*   Updated: 2019/10/31 16:30:07 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,23 @@ static void	validate(char *str)
 	}
 }
 
+static void	check_num(char *str, int n)
+{
+	int minus;
+
+	minus = 0;
+	if ((*str == '-' && n > 0) || (*str != '-' && n < 0))
+		error();
+	if (*str == '-' && (minus = 1))
+		++str;
+	while (*str)
+	{
+		if (!n && minus && *str != '0')
+			error();
+		++str;
+	}
+}
+
 static void	push_elem(char *str, t_ps *s)
 {
 	t_st	*new;
@@ -33,6 +50,7 @@ static void	push_elem(char *str, t_ps *s)
 	if (!(new = (t_st *)malloc(sizeof(t_st))))
 		error();
 	num = ft_atoi(str);
+	check_num(str, num);
 	new->n = num;
 	new->next = NULL;
 	if (!(s->stack_a))
