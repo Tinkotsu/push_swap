@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 17:18:41 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/31 16:30:07 by ifran            ###   ########.fr       */
+/*   Updated: 2019/10/31 16:38:24 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	check_num(char *str, int n)
 	int minus;
 
 	minus = 0;
-	if ((*str == '-' && n > 0) || (*str != '-' && n < 0))
+	if ((*str == '-' && n > 0) || (*str != '-' && n < 0)) //не работает с max_int x2
 		error();
 	if (*str == '-' && (minus = 1))
 		++str;
