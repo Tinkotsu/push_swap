@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 17:43:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/24 16:33:41 by ifran            ###   ########.fr       */
+/*   Updated: 2019/10/31 16:45:59 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ char				**ft_sort_params(int argc, char **argv);
 int					ft_sqrt(int nb);
 void				ft_lstpushback(t_list **lst, t_list *new_list);
 void				ft_lstfree(t_list **lst);
+char				**ft_strsplit(char const *str, char c);
 
 #endif
