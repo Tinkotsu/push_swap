@@ -6,23 +6,11 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:41:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/31 16:43:41 by ifran            ###   ########.fr       */
+/*   Updated: 2019/10/31 16:50:14 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	validate(char *str)
-{
-	if (*str == '+' || *str == '-')
-		++str;
-	while(*str)
-	{
-		if (*str < '0' || *str > '9')
-			error();
-		++str;
-	}
-}
 
 static void	check_num(char *str, int n)
 {
@@ -41,7 +29,7 @@ static void	check_num(char *str, int n)
 	}
 }
 
-static void	push_elem(char *str, t_ps *s)
+static void	push_elem(t_ps *s, char *str)
 {
 	t_st	*new;
 	t_st	*temp;
@@ -70,9 +58,29 @@ static void	push_elem(char *str, t_ps *s)
 	}
 }
 
+static void	validate(char *str)
+{
+	if (*str == '+' || *str == '-')
+		++str;
+	while(*str)
+	{
+		if (*str < '0' || *str > '9')
+			error();
+		++str;
+	}
+}
+
 void	validate_and_push(char *str, t_ps *s)
 {
-	char **split;
+	int		i;
+	char	**split;
 
-	split = ft_strsplit(str, ' ');
+	i = 0;
+	split = ft_strsplit_full(str);
+	while (str[i])
+	{
+		validate(str[i]);
+		push_elem(s, str[i]);
+		++i;
+	}
 }
