@@ -16,6 +16,7 @@ void	rra(t_ps *s)
 	tail->next = NULL;
 	head->next = s->stack_a;
 	s->stack_a = head;
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_ps *s)
@@ -32,6 +33,7 @@ void	rrb(t_ps *s)
 	tail->next = NULL;
 	head->next = s->stack_b;
 	s->stack_b = head;
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_ps *s)
