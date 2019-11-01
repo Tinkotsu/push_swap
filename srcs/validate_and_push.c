@@ -29,6 +29,35 @@ static void	check_num(char *str, int n)
 	}
 }
 
+static void	validate(char *str, int n)
+{
+	size_t	len;
+	int		minus;
+
+	minus = 0;
+	len = 0;
+	if (*str == '+' || (*str == '-' && (minus = 1)))
+		++str;
+	while (*str == '0')
+		++str;
+	if (n == 0 && *str != '0')
+		error();
+	if (*str)
+		len = ft_strlen(str);
+	if (len > 10)
+		error();
+	if (len == 10 && !minus && ft_strcmp("2147483647", str) < 0)
+		error();
+	if (len == 10 && minus && ft_strcmp("2147483648", str) < 0)
+		error();
+	while(*str)
+	{
+		if (*str < '0' || *str > '9')
+			error();
+		++str;
+	}
+}
+
 static void	push_elem(t_ps *s, char *str)
 {
 	t_st	*new;
@@ -38,7 +67,7 @@ static void	push_elem(t_ps *s, char *str)
 	if (!(new = (t_st *)malloc(sizeof(t_st))))
 		error();
 	num = ft_atoi(str);
-	check_num(str, num);
+	validate(str, num);
 	new->n = num;
 	new->next = NULL;
 	if (!(s->stack_a))
@@ -55,18 +84,6 @@ static void	push_elem(t_ps *s, char *str)
 			temp = temp->next;
 		}
 		temp->next = new;
-	}
-}
-
-static void	validate(char *str)
-{
-	if (*str == '+' || *str == '-')
-		++str;
-	while(*str)
-	{
-		if (*str < '0' || *str > '9')
-			error();
-		++str;
 	}
 }
 
