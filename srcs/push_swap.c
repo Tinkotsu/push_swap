@@ -22,7 +22,9 @@ static int			check_stack(t_ps *s)
 
 void		push_swap(t_ps *s)
 {
-	int head;
+	int		head;
+	int		last;
+	t_st	*temp;
 
 	if (check_stack(s))
 		return ;
@@ -36,13 +38,23 @@ void		push_swap(t_ps *s)
 					ra(s);
 				pa(s);
 			}
-		else
+		else // TO DO
 		{
-			while (s->stack_b->n < s->stack_a->n)
+			temp = s->stack_a;
+			while (temp->next)
+				temp = temp->next;
+			last = temp->n;
+			while (s->stack_b->n < last)
+			{
 				rra(s);
+				temp = s->stack_a;
+				while (temp->next)
+					temp = temp->next;
+				last = temp->n;
+			}
 			pa(s);
 		}
 	}
-	while (s->stack_a != head)
+	while (s->stack_a->n != head)
 		rra(s);
 }
