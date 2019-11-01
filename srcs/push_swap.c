@@ -31,7 +31,7 @@ void		push_swap(t_ps *s)
 			{
 				while (s->stack_b->n > s->stack_a->n)
 					ra(s);
-				pb(s);
+				pa(s);
 			}
 		else
 		{
