@@ -12,12 +12,20 @@
 
 #include "libft.h"
 
-static int			word_len(char const *str, char c)
+static int			is_space(char const *str)
+{
+	if ((*str == ' ') || (*str == '\t') || (*str == '\r')
+			|| (*str == '\n') || (*str == '\v') || (*str == '\f'))
+		return (1);
+	return (0);
+}
+
+static int			word_len(char const *str)
 {
 	int len;
 
 	len = 0;
-	while (*str && *str != c)
+	while (*str && is_space(str))
 	{
 		++len;
 		++str;
@@ -25,40 +33,41 @@ static int			word_len(char const *str, char c)
 	return (len);
 }
 
-static int			count_words(char const *str, char c)
+static int			count_words(char const *str)
 {
 	int count;
 
 	count = 0;
 	while (*str)
 	{
-		while (*str && *str == c)
+		while (*str && is_space(str))
 			++str;
 		if (*str)
 			++count;
-		while (*str && *str != c)
+		while (*str && !is_space(str))
 			++str;
 	}
 	return (count);
 }
 
-static char			**strpush(char **arr, char const *str, char c)
+static char			**strpush(char **arr, char const *str)
 {
 	int		i;
 	int		j;
 
 	i = 0;
-	while (*str && count_words(str, c))
+	while (*str && count_words(str))
 	{
 		j = 0;
-		str = ft_clearing(str);
-		arr[i] = (char *)malloc(sizeof(char) * (word_len(str, c) + 1));
+		while (is_space(str))
+			++str;
+		arr[i] = (char *)malloc(sizeof(char) * (word_len(str) + 1));
 		if (!(arr[i]))
 		{
 			ft_freep(&arr, i);
 			return (NULL);
 		}
-		while (*str && *str != c)
+		while (*str && !is_space(str))
 			arr[i][j++] = *str++;
 		arr[i][j] = '\0';
 		++i;
@@ -74,12 +83,12 @@ char				**ft_strsplit_full(char const *str)
 
 	if (!str)
 		return (NULL);
-	words_num = count_words(str, c);
+	words_num = count_words(str);
 	arr = (char **)malloc(sizeof(char *) * (words_num + 1));
 	if (!arr)
 		return (NULL);
 	start = arr;
-	arr = strpush(arr, str, c);
+	arr = strpush(arr, str);
 	arr[words_num] = NULL;
 	return (start);
 }
