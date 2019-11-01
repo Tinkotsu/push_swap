@@ -22,9 +22,12 @@ static int			check_stack(t_ps *s)
 
 void		push_swap(t_ps *s)
 {
+	int head;
+
 	if (check_stack(s))
 		return ;
 	leave_three(s);
+	head = s->stack_a->n;
 	while (s->stack_b)
 	{
 		if (s->stack_b->n > s->stack_a->n)
@@ -40,4 +43,6 @@ void		push_swap(t_ps *s)
 			pa(s);
 		}
 	}
+	while (s->stack_a != head)
+		rra(s);
 }
