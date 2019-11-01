@@ -15,6 +15,7 @@ void	sa(t_ps *s)
 		s->stack_a = temp2;
 		s->stack_a->next = temp1;
 	}
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_ps *s)
@@ -30,6 +31,7 @@ void	sb(t_ps *s)
 		s->stack_b = temp2;
 		s->stack_b->next = temp1;
 	}
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_ps *s)
