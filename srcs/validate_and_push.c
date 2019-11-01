@@ -96,7 +96,6 @@ void	validate_and_push(char *str, t_ps *s)
 	split = ft_strsplit_full(str);
 	while (str[i])
 	{
-		validate(str[i]);
 		push_elem(s, str[i]);
 		++i;
 	}
