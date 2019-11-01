@@ -27,7 +27,7 @@ void		push_swap(t_ps *s)
 	if (check_stack(s))
 		return ;
 	leave_three(s);
-	head = s->stack_a->n;
+	head = s->stack_a->next->next->n;
 	while (s->stack_b)
 	{
 		if (s->stack_b->n > s->stack_a->n)
@@ -36,13 +36,13 @@ void		push_swap(t_ps *s)
 					ra(s);
 				pa(s);
 			}
-		else
+		else // TO DO
 		{
 			while (s->stack_b->n < s->stack_a->n)
 				rra(s);
 			pa(s);
 		}
 	}
-	while (s->stack_a != head)
+	while (s->stack_a->n != head)
 		rra(s);
 }
