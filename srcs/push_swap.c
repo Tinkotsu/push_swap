@@ -43,14 +43,12 @@ static void	leave_three(t_ps *s)
 		return ;
 	while (len > 3)
 	{
-		if (s->stack_a->n == min)
-			ra(s);
-		if (s->stack_a->n == max)
+		while (s->stack_a->n == min || s->stack_a->n == max)
 			ra(s);
 		pb(s);
 		len--;
 	}
-	sort_three(s->stack_a, min, max);
+	sort_three(s, min, max);
 }
 
 int			check_stack(t_ps *s)
