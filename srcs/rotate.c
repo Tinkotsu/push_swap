@@ -12,6 +12,7 @@ void	ra(t_ps *s)
 	temp->next = s->stack_a;
 	s->stack_a = s->stack_a->next;
 	temp->next->next = NULL;
+	write(1, "ra\n", 3);
 }
 
 void	rb(t_ps *s)
@@ -24,6 +25,7 @@ void	rb(t_ps *s)
 	temp->next = s->stack_b;
 	s->stack_b = s->stack_b->next;
 	temp->next->next = NULL;
+	write(1, "rb\n", 3);
 }
 
 void	rr(t_ps *s)
