@@ -77,9 +77,9 @@ void	validate_and_push(char *str, t_ps *s)
 
 	i = 0;
 	split = ft_strsplit_full(str);
-	while (str[i])
+	while (split[i])
 	{
-		push_elem(s, str[i]);
+		push_elem(s, split[i]);
 		++i;
 	}
 }

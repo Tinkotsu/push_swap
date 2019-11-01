@@ -32,6 +32,7 @@ typedef struct	s_ps
 
 //отсортировать функции внизу, некрасиво :(
 
+void	validate_and_push(char *str, t_ps *s);
 size_t			stack_len(t_st *stack_a);
 int				find_min(t_st *stack);
 int				find_max(t_st *stack);
