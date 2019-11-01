@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_and_push.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:41:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/31 16:50:14 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/02 01:54:27 by tinkotsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	validate(char *str, int n)
 		++str;
 	while (*str == '0')
 		++str;
-	if (n == 0 && *str != '0')
+	if (n == 0 && *str && *str != '0')
 		error();
 	if (*str)
 		len = ft_strlen(str);

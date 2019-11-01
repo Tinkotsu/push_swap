@@ -38,7 +38,7 @@ void		push_swap(t_ps *s)
 					ra(s);
 				pa(s);
 			}
-		else // TO DO
+		else
 		{
 			temp = s->stack_a;
 			while (temp->next)
