@@ -2,56 +2,7 @@
 
 #include "push_swap.h"
 
-static void	sort_three(t_ps *s, int min, int max)
-{
-	if (s->stack_a->n == min)
-	{
-		if (s->stack_a->next->n == max)
-		{
-			sa(s);
-			rra(s);
-		}
-		else
-			ra(s);
-	}
-	if (s->stack_a->n == max)
-	{
-		if (s->stack_a->next->n == min)
-			rra(s);
-		else
-			sa(s);
-	}
-	else
-	{
-		if (s->stack_a->next->n == min)
-		{
-			sa(s);
-			ra(s);
-		}
-	}
-}
-
-static void	leave_three(t_ps *s)
-{
-	size_t	len;
-	int		min;
-	int		max;
-
-	min = find_min(s->stack_a);
-	max = find_max(s->stack_a);
-	if (!(len = stack_len(s->stack_a)))
-		return ;
-	while (len > 3)
-	{
-		while (s->stack_a->n == min || s->stack_a->n == max)
-			ra(s);
-		pb(s);
-		len--;
-	}
-	sort_three(s, min, max);
-}
-
-int			check_stack(t_ps *s)
+static int			check_stack(t_ps *s)
 {
 	t_st *last;
 
@@ -71,6 +22,20 @@ int			check_stack(t_ps *s)
 
 void		push_swap(t_ps *s)
 {
-	if (!(check_stack(s)))
-		leave_three(s);
+	if (check_stack(s))
+		return ;
+	leave_three(s);
+	while (s->stack_b)
+	{
+		if (s->stack_b->n > s->stack_a->n)
+			{
+				while (s->stack_b->n > s->stack_a->n)
+					ra(s);
+				pb(s);
+			}
+		else
+		{
+			break ;	
+		}
+	}
 }
