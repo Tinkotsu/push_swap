@@ -24,7 +24,7 @@ int			main(int argc, char **argv)
 	s->stack_b = NULL;
 	while (argv[i])
 	{
-		validate_and_push(argv[i]);
+		validate_and_push(argv[i], s);
 		++i;
 	}
 	push_swap(s);
