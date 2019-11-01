@@ -12,23 +12,6 @@
 
 #include "push_swap.h"
 
-static void	check_num(char *str, int n)
-{
-	int minus;
-
-	minus = 0;
-	if ((*str == '-' && n > 0) || (*str != '-' && n < 0)) //не работает с max_int x2
-		error();
-	if (*str == '-' && (minus = 1))
-		++str;
-	while (*str)
-	{
-		if (!n && minus && *str != '0')
-			error();
-		++str;
-	}
-}
-
 static void	validate(char *str, int n)
 {
 	size_t	len;
