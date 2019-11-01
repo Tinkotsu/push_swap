@@ -93,6 +93,6 @@ char				**ft_sort_params(int argc, char **argv);
 int					ft_sqrt(int nb);
 void				ft_lstpushback(t_list **lst, t_list *new_list);
 void				ft_lstfree(t_list **lst);
-char				**ft_strsplit(char const *str, char c);
+char				**ft_strsplit_full(char const *str);
 
 #endif
