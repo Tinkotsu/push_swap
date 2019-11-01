@@ -66,7 +66,7 @@ static char			**strpush(char **arr, char const *str, char c)
 	return (arr);
 }
 
-char				**ft_strsplit(char const *str, char c)
+char				**ft_strsplit_full(char const *str, char c)
 {
 	char	**arr;
 	char	**start;
