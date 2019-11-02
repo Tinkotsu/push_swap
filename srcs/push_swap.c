@@ -40,17 +40,15 @@ void		push_swap(t_ps *s)
 			}
 		else
 		{
-			temp = s->stack_a;
-			while (temp->next)
-				temp = temp->next;
-			last = temp->n;
-			while (s->stack_b->n < last)
+			while (1)
 			{
-				rra(s);
 				temp = s->stack_a;
 				while (temp->next)
 					temp = temp->next;
 				last = temp->n;
+				if (s->stack_b->n > last)
+					break ;
+				rra(s);
 			}
 			pa(s);
 		}
