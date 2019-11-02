@@ -7,27 +7,27 @@ static void	sort_three(t_ps *s, int min, int max)
 	if (s->stack_a->n == min)
 	{
 		if (s->stack_a->next->n == max)
-		{
 			sa(s);
-			rra(s);
-		}
 		else
-			ra(s);
+			rra(s);
 	}
 	if (s->stack_a->n == max)
 	{
-		if (s->stack_a->next->n == min)
+		if (s->stack_a->next->n != min)
+		{
 			rra(s);
-		else
 			sa(s);
+		}
 	}
 	else
 	{
 		if (s->stack_a->next->n == min)
 		{
 			sa(s);
-			ra(s);
+			rra(s);
 		}
+		if (s->stack_a->next->n == max)
+			ra(s);
 	}
 }
 

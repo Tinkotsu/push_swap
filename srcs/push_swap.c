@@ -32,26 +32,7 @@ void		push_swap(t_ps *s)
 	head = s->stack_a->next->next->n;
 	while (s->stack_b)
 	{
-		if (s->stack_b->n > s->stack_a->n)
-			{
-				while (s->stack_b->n > s->stack_a->n)
-					ra(s);
-				pa(s);
-			}
-		else
-		{
-			while (1)
-			{
-				temp = s->stack_a;
-				while (temp->next)
-					temp = temp->next;
-				last = temp->n;
-				if (s->stack_b->n > last)
-					break ;
-				rra(s);
-			}
-			pa(s);
-		}
+		; // todo
 	}
 	while (s->stack_a->n != head)
 		rra(s);
