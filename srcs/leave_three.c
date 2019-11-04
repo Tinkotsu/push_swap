@@ -31,17 +31,26 @@ static void	sort_three(t_ps *s, int min, int max) //оставляю max min val
 	}
 }
 
-void		do_index(t_st *stack)
+void		do_index(t_ps *s)
 {
-	t_st	*temp;
+	t_st	*temp_a;
+	t_st	*temp_b;
 	size_t	index;
 
-	temp = stack;
+	temp_a = s->stack_a;
+	temp_b = s->stack_b;
 	index = 1;
-	while (temp)
+	while (temp_a)
 	{
-		temp->index = index;
-		temp = temp->next;
+		temp_a->index = index;
+		temp_a = temp_a->next;
+		++index;
+	}
+	index = 1;
+	while (temp_b)
+	{
+		temp_b->index = index;
+		temp_b = temp_b->next;
 		++index;
 	}
 }
@@ -64,6 +73,5 @@ void		leave_three(t_ps *s)
 		len--;
 	}
 	sort_three(s, min, max);
-	do_index(s->stack_a);
-	do_index(s->stack_b);
+	do_index(s);
 }
