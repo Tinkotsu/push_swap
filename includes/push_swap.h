@@ -20,6 +20,7 @@
 
 typedef	struct	s_st
 {
+	int			index;
 	int			n;
 	struct s_st	*next;
 }				t_st;
