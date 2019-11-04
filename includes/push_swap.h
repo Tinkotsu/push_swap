@@ -33,13 +33,13 @@ typedef struct	s_ps
 
 //отсортировать функции внизу, некрасиво :(
 
+void			do_index(t_ps *s);
 void			leave_three(t_ps *s);
 void			validate_and_push(char *str, t_ps *s);
 size_t			stack_len(t_st *stack_a);
 int				find_min(t_st *stack);
 int				find_max(t_st *stack);
 int				is_sorted(t_st *stack);
-int				is_r_sorted(t_st *stack);
 int				main(int argc, char **argv);
 void			error(void); //уточнить про вывод ошибки
 void			pa(t_ps *s);
