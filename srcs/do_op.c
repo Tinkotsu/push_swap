@@ -26,9 +26,9 @@ static void two(t_ps *s, t_st *temp)
 {
 	size_t	i;
 
-	i = temp->ras > temp->rbs ? temp->ras - temp->rbs : temp->rbs - temp->ras;
+	i = temp->rras > temp->rrbs ? temp->rras - temp->rrbs : temp->rrbs - temp->rras;
 	while (temp->rrrs--)
-		rr(s);
+		rrr(s);
 	if (temp->rras > temp->rrbs)
 	{
 		while (i--)

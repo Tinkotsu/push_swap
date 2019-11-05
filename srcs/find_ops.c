@@ -46,10 +46,10 @@ static size_t	find_a_index(t_st *temp, t_st *temp_a)
 	int		min;
 
 	head = temp_a;
-	a_index = 1;
 	min = find_min(temp_a);
 	while (temp_a->n != min)
 		temp_a = temp_a->next;
+	a_index = temp_a->index;
 	while (temp->n > temp_a->n)
 	{
 		if (temp_a->next)

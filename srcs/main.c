@@ -6,7 +6,7 @@
 /*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 17:18:41 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/05 19:08:07 by tinkotsu         ###   ########.fr       */
+/*   Updated: 2019/11/05 20:29:44 by tinkotsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int			main(int argc, char **argv)
 		++i;
 	}
 	push_swap(s);
-	test(s);
+	//test(s);
 	return (0);
 }
