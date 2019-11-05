@@ -39,6 +39,33 @@ static void		find_min_op(t_st *s)
 		s->min_ops = s->rrbs + s->ras;
 }
 
+static size_t	find_a_index(t_st *temp, t_st *temp_a)
+{
+	t_st	*head;
+	size_t	a_index;
+	int		min;
+
+	head = temp_a;
+	a_index = 1;
+	min = find_min(temp_a);
+	while (temp_a->n != min)
+		temp_a = temp_a->next;
+	while (temp->n > temp_a->n)
+	{
+		if (temp_a->next)
+		{
+			++a_index;
+			temp_a = temp_a->next;
+		}
+		else
+		{
+			a_index = 1;
+			temp_a = head;
+		}
+	}
+	return (a_index);
+}
+
 void		find_ops(t_ps *s, size_t index)
 {
 	t_st	*temp_a;
@@ -49,16 +76,11 @@ void		find_ops(t_ps *s, size_t index)
 
 	len_a = stack_len(s->stack_a);
 	len_b = stack_len(s->stack_b);
-	a_index = 1;
 	temp_a = s->stack_a;
 	temp = initialise(s, index);
 	temp->rrbs = len_b - index + 1;
 	temp->rbs = index - 1;
-	while (temp->n > temp_a->n)
-	{
-		++a_index;
-		temp_a = temp_a->next;
-	}
+	a_index = find_a_index(temp, temp_a);
 	temp->rras = len_a - a_index + 1;
 	temp->ras = a_index - 1;
 	find_min_op(temp);

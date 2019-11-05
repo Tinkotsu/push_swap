@@ -41,7 +41,7 @@ void		leave_three(t_ps *s)
 	max = find_max(s->stack_a);
 	if (!(len = stack_len(s->stack_a)))
 		return ;
-	while (len > 3) //или если стек А отсортирован
+	while (len > 3)
 	{
 		while (s->stack_a->n == min || s->stack_a->n == max)
 			ra(s);

@@ -6,7 +6,7 @@ int		find_min(t_st *stack)
 	int		min;
 
 	temp = stack;
-	min = 2147483647;
+	min = temp->n;
 	while (temp)
 	{
 		if (temp->n < min)
@@ -22,7 +22,7 @@ int		find_max(t_st *stack)
 	int		max;
 
 	temp = stack;
-	max = -2147483648;
+	max = temp->n;
 	while (temp)
 	{
 		if (temp->n > max)

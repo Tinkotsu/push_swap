@@ -12,23 +12,20 @@ static int check_stack(t_ps *s)
 static size_t find_elem(t_ps *s)
 {
 	t_st *temp;
-	size_t index;
 	size_t min_ops;
 	size_t min_ops_i;
 
-	index = 1;
 	temp = s->stack_b;
 	min_ops = temp->min_ops;
 	min_ops_i = temp->index;
 	while (temp)
 	{
-		find_ops(s, index);
+		find_ops(s, temp->index);
 		if (temp->min_ops < min_ops)
 		{
 			min_ops = temp->min_ops;
 			min_ops_i = temp->index;
 		}
-		++index;
 		temp = temp->next;
 	}
 	return (min_ops_i);
