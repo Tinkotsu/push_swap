@@ -34,14 +34,7 @@ static size_t find_elem(t_ps *s)
 	return (min_ops_i);
 }
 
-static void do_op(size_t i, t_ps *s)
-{
-	t_st *temp;
 
-	temp = s->stack_b;
-	while (temp->index != i)
-		temp = temp->next;
-}
 
 void push_swap(t_ps *s)
 {
