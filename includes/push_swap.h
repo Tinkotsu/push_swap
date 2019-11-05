@@ -20,8 +20,16 @@
 
 typedef	struct	s_st
 {
-	int			index;
+	size_t		index;
 	int			n;
+	int			type_ops; //1: rb, ra; 2: rrb, rra; 3: rb, rra; 4: rrb, ra;
+	size_t		min_ops;
+	size_t		rrs;
+	size_t		rrrs;
+	size_t		rrbs;
+	size_t		rbs;
+	size_t		ras;
+	size_t		rras;
 	struct s_st	*next;
 }				t_st;
 
@@ -33,6 +41,7 @@ typedef struct	s_ps
 
 //отсортировать функции внизу, некрасиво :(
 
+void			find_ops(t_ps *s, size_t index);
 void			do_index(t_ps *s);
 void			leave_three(t_ps *s);
 void			validate_and_push(char *str, t_ps *s);
