@@ -42,7 +42,7 @@ static void	last_roll(t_ps *s)
 	min = find_min(s->stack_a);
 	while (temp->n != min)
 		temp = temp->next;
-	if (temp->index > len / 2)
+	if (temp->index > len / 2 + len % 2)
 	{
 		while (s->stack_a->n != min)
 			rra(s);
