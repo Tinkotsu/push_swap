@@ -44,6 +44,6 @@ void push_swap(t_ps *s)
 	{
 		do_index(s);
 		i = find_elem(s);
-		do_op(i, s);
+		do_op(s, i);
 	}
 }
