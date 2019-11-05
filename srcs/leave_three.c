@@ -12,7 +12,7 @@ static void	sort_three(t_ps *s, int min, int max) //оставляю max min val
 			ra(s);
 		}
 	}
-	if (s->stack_a->n == max)
+	else if (s->stack_a->n == max)
 	{
 		if (s->stack_a->next->n == min)
 			ra(s);
