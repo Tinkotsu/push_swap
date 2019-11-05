@@ -78,7 +78,7 @@ void		find_ops(t_ps *s, size_t index)
 	len_b = stack_len(s->stack_b);
 	temp_a = s->stack_a;
 	temp = initialise(s, index);
-	temp->rrbs = len_b - index + 1;
+	temp->rrbs = len_b > 1 ? len_b - index + 1 : 0;
 	temp->rbs = index - 1;
 	a_index = find_a_index(temp, temp_a);
 	temp->rras = len_a - a_index + 1;
