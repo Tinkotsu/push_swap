@@ -1,12 +1,12 @@
 #include "push_swap.h"
 
-size_t	stack_len(t_st *stack_a)
+size_t	stack_len(t_st *stack)
 {
 	t_st	*temp;
 	size_t	len;
 
 	len = 0;
-	temp = stack_a;
+	temp = stack;
 	while (temp)
 	{
 		++len;

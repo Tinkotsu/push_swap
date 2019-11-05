@@ -31,11 +31,31 @@ static size_t find_elem(t_ps *s)
 	return (min_ops_i);
 }
 
+static void	last_roll(t_ps *s)
+{
+	int		min;
+	size_t	len;
+	t_st	*temp;
 
+	temp = s->stack_a;
+	len = stack_len(s->stack_a);
+	min = find_min(s->stack_a);
+	while (temp->n != min)
+		temp = temp->next;
+	if (temp->index > len / 2)
+	{
+		while (s->stack_a->n != min)
+			rra(s);
+	}
+	else
+	{
+		while (s->stack_a->n != min)
+			ra(s);	
+	}
+}
 
 void push_swap(t_ps *s)
 {
-	int min;
 	size_t i;
 
 	if (check_stack(s))
@@ -47,7 +67,5 @@ void push_swap(t_ps *s)
 		i = find_elem(s);
 		do_op(s, i);
 	}
-	min = find_min(s->stack_a);
-	while (s->stack_a->n != min) //сделать проверку на ra/rra
-		rra(s);
+	last_roll(s);
 }
