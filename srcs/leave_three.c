@@ -2,7 +2,7 @@
 
 #include "push_swap.h"
 
-static void	sort_three(t_ps *s, int min, int max) //оставляю max min val
+static void	sort_three(t_ps *s, int min, int max)
 {
 	if (s->stack_a->n == min)
 	{

@@ -48,6 +48,6 @@ void push_swap(t_ps *s)
 		do_op(s, i);
 	}
 	min = find_min(s->stack_a);
-	while (s->stack_a->n != min)
+	while (s->stack_a->n != min) //сделать проверку на ra/rra
 		rra(s);
 }
