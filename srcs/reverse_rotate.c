@@ -30,7 +30,6 @@ void	rrb(t_ps *s)
 		tail = head;
 		head = head->next;
 	}
-	tail->next = NULL;
 	head->next = s->stack_b;
 	s->stack_b = head;
 	write(1, "rrb\n", 4);

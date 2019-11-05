@@ -35,6 +35,7 @@ static size_t find_elem(t_ps *s)
 
 void push_swap(t_ps *s)
 {
+	int min;
 	size_t i;
 
 	if (check_stack(s))
@@ -46,4 +47,7 @@ void push_swap(t_ps *s)
 		i = find_elem(s);
 		do_op(s, i);
 	}
+	min = find_min(s->stack_a);
+	while (s->stack_a->n != min)
+		rra(s);
 }
