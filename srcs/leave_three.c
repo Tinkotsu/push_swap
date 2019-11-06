@@ -18,8 +18,8 @@ static void	sort_three(t_ps *s, int min, int max)
 			ra(s);
 		else
 		{
+			ra(s);
 			sa(s);
-			rra(s);
 		}
 	}
 	else
