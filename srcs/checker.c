@@ -2,29 +2,29 @@
 
 #include "checker.h"
 
-static int	check_op(t_ps *s, char *str)
+static int	check_op(t_ps *s, char *str, int i)
 {
-	if (ft_strequ(str, "pa\n"))
+	if (i == 3 && ft_strequ(str, "pa\n"))
 		pa(s, 0);
-	else if (ft_strequ(str, "pb\n"))
+	else if (i == 3 && ft_strequ(str, "pb\n"))
 		pb(s, 0);
-	else if (ft_strequ(str, "sa\n"))
+	else if (i == 3 && ft_strequ(str, "sa\n"))
 		sa(s, 0);
-	else if (ft_strequ(str, "sb\n"))
+	else if (i == 3 && ft_strequ(str, "sb\n"))
 		sb(s, 0);
-	else if (ft_strequ(str, "ss\n"))
+	else if (i == 3 && ft_strequ(str, "ss\n"))
 		ss(s, 0);
-	else if (ft_strequ(str, "ra\n"))
+	else if (i == 3 && ft_strequ(str, "ra\n"))
 		ra(s, 0);
-	else if (ft_strequ(str, "rb\n"))
+	else if (i == 3 && ft_strequ(str, "rb\n"))
 		rb(s, 0);
-	else if (ft_strequ(str, "rr\n"))
+	else if (i == 3 && ft_strequ(str, "rr\n"))
 		rr(s, 0);
-	else if (ft_strequ(str, "rra\n"))
+	else if (i == 4 && ft_strequ(str, "rra\n"))
 		rra(s, 0);
-	else if (ft_strequ(str, "rrb\n"))
+	else if (i == 4 && ft_strequ(str, "rrb\n"))
 		rrb(s, 0);
-	else if (ft_strequ(str, "rrr\n"))
+	else if (i == 4 && ft_strequ(str, "rrr\n"))
 		rrr(s, 0);
 	else
 		error();
@@ -42,9 +42,9 @@ void		checker(t_ps *s)
 	{
 		if (i > 4)
 			error();
-		if (ft_strchr(buff, '\n'))
+		if (i > 2 && ft_strchr(buff, '\n'))
 		{
-			check_op(s, buff);
+			check_op(s, buff, i);
 			ft_strclr(buff);
 			i = 0;
 		}
