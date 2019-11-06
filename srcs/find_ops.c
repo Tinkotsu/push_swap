@@ -84,7 +84,7 @@ void		find_ops(t_ps *s, size_t index)
 	temp->rrbs = len_b > 1 ? len_b - index + 1 : 0;
 	temp->rbs = index - 1;
 	a_index = find_a_index(temp, temp_a);
-	temp->rras = len_a - a_index + 1;
+	temp->rras = a_index > 1 ? len_a - a_index + 1 : 0;
 	temp->ras = a_index - 1;
 	find_min_op(temp);
 }

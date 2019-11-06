@@ -15,12 +15,12 @@ static void one(t_ps *s, t_st *temp)
 	if (temp->ras > temp->rbs)
 	{
 		while (i--)
-			ra(s);
+			ra(s, 1);
 	}
 	else
 	{
 		while (i--)
-			rb(s);
+			rb(s, 1);
 	}
 	pa(s);
 }
@@ -38,12 +38,12 @@ static void two(t_ps *s, t_st *temp)
 	if (temp->rras > temp->rrbs)
 	{
 		while (i--)
-			rra(s);
+			rra(s, 1);
 	}
 	else
 	{
 		while (i--)
-			rrb(s);
+			rrb(s, 1);
 	}
 	pa(s);
 }
@@ -56,10 +56,10 @@ static void three(t_ps *s, t_st *temp)
 	while (temp->rbs--)
 	{
 		i--;
-		rb(s);
+		rb(s, 1);
 	}
 	while (i--)
-		rra(s);
+		rra(s, 1);
 	pa(s);
 }
 
@@ -71,10 +71,10 @@ static void four(t_ps *s, t_st *temp)
 	while (temp->rrbs--)
 	{
 		i--;
-		rrb(s);
+		rrb(s, 1);
 	}
 	while (i--)
-		ra(s);
+		ra(s, 1);
 	pa(s);
 }
 

@@ -11,9 +11,9 @@ static int check_stack(t_ps *s)
 
 static size_t find_elem(t_ps *s)
 {
-	t_st *temp;
-	size_t min_ops;
-	size_t min_ops_i;
+	t_st	*temp;
+	size_t	min_ops;
+	size_t	min_ops_i;
 
 	temp = s->stack_b;
 	min_ops = 4294967295;
@@ -44,12 +44,12 @@ static void	last_roll(t_ps *s)
 	if (temp->index > len / 2 + len % 2)
 	{
 		while (s->stack_a->n != min)
-			rra(s);
+			rra(s, 1);
 	}
 	else
 	{
 		while (s->stack_a->n != min)
-			ra(s);	
+			ra(s, 1);	
 	}
 }
 

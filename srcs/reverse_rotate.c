@@ -2,7 +2,7 @@
 
 #include "push_swap.h"
 
-void	rra(t_ps *s)
+void	rra(t_ps *s, int flag)
 {
 	t_st *head;
 	t_st *tail;
@@ -16,10 +16,11 @@ void	rra(t_ps *s)
 	tail->next = NULL;
 	head->next = s->stack_a;
 	s->stack_a = head;
-	write(1, "rra\n", 4);
+	if (flag)
+		write(1, "rra\n", 4);
 }
 
-void	rrb(t_ps *s)
+void	rrb(t_ps *s, int flag)
 {
 	t_st *head;
 	t_st *tail;
@@ -33,11 +34,13 @@ void	rrb(t_ps *s)
 	tail->next = NULL;
 	head->next = s->stack_b;
 	s->stack_b = head;
-	write(1, "rrb\n", 4);
+	if (flag)
+		write(1, "rrb\n", 4);
 }
 
 void	rrr(t_ps *s)
 {
-	rra(s);
-	rrb(s);
+	rra(s, 0);
+	rrb(s, 0);
+	write(1, "rrr\n", 4);
 }
