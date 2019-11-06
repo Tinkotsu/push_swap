@@ -10,7 +10,7 @@
 typedef struct	s_st
 {
 	int			n;
-	struct s_nb	*next;
+	struct s_st	*next;
 }				t_st;
 
 typedef struct	s_ps
@@ -20,6 +20,7 @@ typedef struct	s_ps
 }				t_ps;
 
 
+void			all_free(t_ps *s);
 void			checker(t_ps *s);
 int				main(int argc, char **argv);
 void			validate_and_push(char *str, t_ps *s);

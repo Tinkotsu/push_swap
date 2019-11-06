@@ -30,5 +30,6 @@ int			main(int argc, char **argv)
 		++i;
 	}
 	push_swap(s);
+	all_free(s);
 	return (0);
 }

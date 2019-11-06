@@ -20,5 +20,6 @@ int		main(int argc, char **argv)
 		++i;
 	}
 	checker(s);
+	all_free(s);
 	return (0);
 }

@@ -50,6 +50,8 @@ void		checker(t_ps *s)
 		}
 		++i;
 	}
+	if (i)
+		error();
 	if (!s->stack_b && is_sorted(s->stack_a))
 		write(1, "OK\n", 3);
 	else

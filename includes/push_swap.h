@@ -40,6 +40,7 @@ typedef struct	s_ps
 
 //отсортировать функции внизу, некрасиво :(
 
+void			all_free(t_ps *s);
 void			do_op(t_ps *s, size_t i);
 void			find_ops(t_ps *s, size_t index);
 void			do_index(t_ps *s);
