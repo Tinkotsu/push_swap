@@ -38,9 +38,10 @@ void	rrb(t_ps *s, int flag)
 		write(1, "rrb\n", 4);
 }
 
-void	rrr(t_ps *s)
+void	rrr(t_ps *s, int flag)
 {
 	rra(s, 0);
 	rrb(s, 0);
-	write(1, "rrr\n", 4);
+	if (flag)
+		write(1, "rrr\n", 4);
 }

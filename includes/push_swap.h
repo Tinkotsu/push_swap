@@ -52,19 +52,18 @@ int				find_max(t_st *stack);
 int				is_sorted(t_st *stack);
 int				main(int argc, char **argv);
 void			error(void); //уточнить про вывод ошибки
-void			pa(t_ps *s);
-void			pb(t_ps *s);
-void			sa(t_ps *s);
-void			sb(t_ps *s);
-void			ss(t_ps *s);
+void			pa(t_ps *s, int flag);
+void			pb(t_ps *s, int flag);
+void			sa(t_ps *s, int flag);
+void			sb(t_ps *s, int flag);
+void			ss(t_ps *s, int flag);
 void			ra(t_ps *s, int flag);
 void			rb(t_ps *s, int flag);
-void			rr(t_ps *s);
+void			rr(t_ps *s, int flag);
 void			rra(t_ps *s, int flag);
 void			rrb(t_ps *s, int flag);
-void			rrr(t_ps *s);
+void			rrr(t_ps *s, int flag);
 void			push_swap(t_ps *s);
 void 			test(t_ps *s);
-
 
 #endif

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	pa(t_ps *s)
+void	pa(t_ps *s, int flag)
 {
 	t_st *temp;
 
@@ -11,10 +11,11 @@ void	pa(t_ps *s)
 		s->stack_a = s->stack_b;
 		s->stack_b = temp;
 	}
-	write(1, "pa\n", 3);
+	if (flag)
+		write(1, "pa\n", 3);
 }
 
-void	pb(t_ps *s)
+void	pb(t_ps *s, int flag)
 {
 	t_st *temp;
 
@@ -25,5 +26,6 @@ void	pb(t_ps *s)
 		s->stack_b = s->stack_a;
 		s->stack_a = temp;
 	}
-	write(1, "pb\n", 3);
+	if (flag)
+		write(1, "pb\n", 3);
 }

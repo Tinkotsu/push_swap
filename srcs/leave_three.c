@@ -8,7 +8,7 @@ static void	sort_three(t_ps *s, int min, int max)
 	{
 		if (s->stack_a->next->n == max)
 		{
-			sa(s);
+			sa(s, 1);
 			ra(s, 1);
 		}
 	}
@@ -19,13 +19,13 @@ static void	sort_three(t_ps *s, int min, int max)
 		else
 		{
 			ra(s, 1);
-			sa(s);
+			sa(s, 1);
 		}
 	}
 	else
 	{
 		if (s->stack_a->next->n == min)
-			sa(s);
+			sa(s, 1);
 		else
 			rra(s, 1);			
 	}
@@ -45,7 +45,7 @@ void		leave_three(t_ps *s)
 	{
 		while (s->stack_a->n == min || s->stack_a->n == max)
 			ra(s, 1);
-		pb(s);
+		pb(s, 1);
 		len--;
 	}
 	sort_three(s, min, max);

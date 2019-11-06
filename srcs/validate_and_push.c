@@ -82,4 +82,6 @@ void	validate_and_push(char *str, t_ps *s)
 		push_elem(s, split[i]);
 		++i;
 	}
+	i--;
+	ft_freep(&split, i);
 }

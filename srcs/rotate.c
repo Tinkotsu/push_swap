@@ -30,9 +30,10 @@ void	rb(t_ps *s, int flag)
 		write(1, "rb\n", 3);
 }
 
-void	rr(t_ps *s)
+void	rr(t_ps *s, int flag)
 {
 	ra(s, 0);
 	rb(s, 0);
-	write(1, "rr\n", 3);
+	if (flag)
+		write(1, "rr\n", 3);
 }

@@ -10,7 +10,7 @@ static void one(t_ps *s, t_st *temp)
 	while (temp->rrs--)
 	{
 		i--;
-		rr(s);
+		rr(s, 1);
 	}
 	if (temp->ras > temp->rbs)
 	{
@@ -22,7 +22,7 @@ static void one(t_ps *s, t_st *temp)
 		while (i--)
 			rb(s, 1);
 	}
-	pa(s);
+	pa(s, 1);
 }
 
 static void two(t_ps *s, t_st *temp)
@@ -33,7 +33,7 @@ static void two(t_ps *s, t_st *temp)
 	while (temp->rrrs--)
 	{
 		i--;
-		rrr(s);
+		rrr(s, 1);
 	}
 	if (temp->rras > temp->rrbs)
 	{
@@ -45,7 +45,7 @@ static void two(t_ps *s, t_st *temp)
 		while (i--)
 			rrb(s, 1);
 	}
-	pa(s);
+	pa(s, 1);
 }
 
 static void three(t_ps *s, t_st *temp)
@@ -60,7 +60,7 @@ static void three(t_ps *s, t_st *temp)
 	}
 	while (i--)
 		rra(s, 1);
-	pa(s);
+	pa(s, 1);
 }
 
 static void four(t_ps *s, t_st *temp)
@@ -75,7 +75,7 @@ static void four(t_ps *s, t_st *temp)
 	}
 	while (i--)
 		ra(s, 1);
-	pa(s);
+	pa(s, 1);
 }
 
 void	do_op(t_ps *s, size_t i)
