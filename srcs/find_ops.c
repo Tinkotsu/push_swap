@@ -31,8 +31,11 @@ static void		find_min_op(t_st *s)
 	s->rrrs = s->rras > s->rrbs ? s->rrbs : s->rras;
 	if (max_r <= max_rr && (s->type_ops = 1))
 		s->min_ops = max_r;
-	if (max_rr < max_r && (s->type_ops = 2))
+	else
+	{
+		s->type_ops = 2;
 		s->min_ops = max_rr;
+	}
 	if (s->rbs + s->rras < s->min_ops && (s->type_ops = 3))
 		s->min_ops = s->rbs + s->rras;
 	if (s->rrbs + s->ras < s->min_ops && (s->type_ops = 4))

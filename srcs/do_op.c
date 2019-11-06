@@ -6,9 +6,12 @@ static void one(t_ps *s, t_st *temp)
 {
 	size_t	i;
 
-	i = temp->ras > temp->rbs ? temp->ras - temp->rbs : temp->rbs - temp->ras;
+	i = temp->min_ops;
 	while (temp->rrs--)
+	{
+		i--;
 		rr(s);
+	}
 	if (temp->ras > temp->rbs)
 	{
 		while (i--)
@@ -26,9 +29,12 @@ static void two(t_ps *s, t_st *temp)
 {
 	size_t	i;
 
-	i = temp->rras > temp->rrbs ? temp->rras - temp->rrbs : temp->rrbs - temp->rras;
+	i = temp->min_ops;
 	while (temp->rrrs--)
+	{
+		i--;
 		rrr(s);
+	}
 	if (temp->rras > temp->rrbs)
 	{
 		while (i--)
@@ -46,10 +52,12 @@ static void three(t_ps *s, t_st *temp)
 {
 	size_t i;
 
-	i = temp->rbs;
-	while (i--)
+	i = temp->min_ops;
+	while (temp->rbs--)
+	{
+		i--;
 		rb(s);
-	i = temp->rras;
+	}
 	while (i--)
 		rra(s);
 	pa(s);
@@ -59,10 +67,12 @@ static void four(t_ps *s, t_st *temp)
 {
 	size_t i;
 
-	i = temp->rrbs;
-	while (i--)
+	i = temp->min_ops;
+	while (temp->rrbs--)
+	{
+		i--;
 		rrb(s);
-	i = temp->ras;
+	}
 	while (i--)
 		ra(s);
 	pa(s);

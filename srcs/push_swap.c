@@ -16,8 +16,7 @@ static size_t find_elem(t_ps *s)
 	size_t min_ops_i;
 
 	temp = s->stack_b;
-	min_ops = temp->min_ops;
-	min_ops_i = temp->index;
+	min_ops = 4294967295;
 	while (temp)
 	{
 		find_ops(s, temp->index);
