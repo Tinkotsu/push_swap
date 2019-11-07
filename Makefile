@@ -6,7 +6,7 @@
 #    By: ifran <ifran@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/24 16:10:58 by ifran             #+#    #+#              #
-#    Updated: 2019/11/07 21:48:24 by ifran            ###   ########.fr        #
+#    Updated: 2019/11/07 21:55:42 by ifran            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ PS_SRC = ps_do_op.c ps_find_ops.c ps_find_values.c ps_index.c \
 		 ps_leave_three.c ps_main.c ps_stack_len.c push_swap.c
 
 CM_SRC = cm_all_free.c cm_error.c cm_is_sorted.c cm_push.c \
-		 cm_reverse_rotate.c cm_rotate.c cm_swap.c cm_test.c \
+		 cm_reverse_rotate.c cm_rotate.c cm_swap.c cm_debug.c \
 		 cm_validate_and_push.c
 
 SRCDIR = srcs/

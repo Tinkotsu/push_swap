@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:41:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 21:19:15 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 21:57:25 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,11 @@ void		validate_and_push(char *str, t_ps *s)
 	char	**split;
 
 	i = 0;
+	if (ft_strequ(str, "-v") && !s->debug)
+	{
+		s->debug = 1;
+		return ;
+	}
 	split = ft_strsplit_full(str);
 	while (split[i])
 	{

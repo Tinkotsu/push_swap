@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:45:34 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 18:44:06 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 21:54:39 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct	s_ps
 {
 	t_st	*stack_a;
 	t_st	*stack_b;
+	int		debug;
 }				t_ps;
 
 void			all_free(t_ps *s);

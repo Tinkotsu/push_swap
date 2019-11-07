@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 18:45:07 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 18:45:08 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 21:55:13 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		main(int argc, char **argv)
 		error();
 	s->stack_a = NULL;
 	s->stack_b = NULL;
+	s->debug = 0;
 	while (argv[i])
 	{
 		validate_and_push(argv[i], s);
