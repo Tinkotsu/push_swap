@@ -6,7 +6,7 @@
 #    By: ifran <ifran@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/24 16:10:58 by ifran             #+#    #+#              #
-#    Updated: 2019/11/07 18:17:41 by ifran            ###   ########.fr        #
+#    Updated: 2019/11/07 18:18:12 by ifran            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,10 @@ FLAGS = -Wall -Wextra -Werror
 
 all: ./libft/libft.a lib $(CHECKER) $(PUSH_SWAP)
 
-$(CHECKER): $(CM_OBJS) $(CH_OBJS) $(CH_HEADER) $(CM_HEADER) $(LIB_HEADER)
+$(CHECKER): $(CH_OBJS) $(CM_OBJS) $(CH_HEADER) $(CM_HEADER) $(LIB_HEADER)
 	@gcc $(FLAGS) -o $(CHECKER) $(CH_OBJS)
 
-$(PUSH_SWAP): $(PS_OBJS) $(PS_OBJS) $(PS_HEADER) $(CM_HEADER) $(LIB_HEADER)
+$(PUSH_SWAP): $(PS_OBJS) $(CM_OBJS) $(PS_HEADER) $(CM_HEADER) $(LIB_HEADER)
 	@gcc $(FLAGS) -o $(PUSH_SWAP) $(PS_OBJS)
 
 $(CM_OBJS): $(CM_SRCS) $(CM_HEADER)
