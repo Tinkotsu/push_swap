@@ -6,7 +6,7 @@
 #    By: ifran <ifran@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/24 16:10:58 by ifran             #+#    #+#              #
-#    Updated: 2019/11/07 21:00:26 by ifran            ###   ########.fr        #
+#    Updated: 2019/11/07 21:16:30 by ifran            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,10 +55,10 @@ $(PUSH_SWAP): $(CM_OBJS) $(PS_OBJS) $(PS_HEADER) $(CM_HEADER) $(LIB_HEADER)
 
 $(OBJDIR)cm_%.o: $(SRCDIR)cm_%.c $(CM_HEADER)
 	@/bin/mkdir -p $(OBJDIR)
-	@gcc -g $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
+	@gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
 
 $(OBJDIR)ch%.o: $(SRCDIR)ch%.c $(CH_HEADER)
-	@gcc -g $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
+	@gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
 
 $(OBJDIR)p%.o: $(SRCDIR)p%.c $(PS_HEADER)
 	@gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
