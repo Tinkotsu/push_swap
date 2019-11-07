@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   validate_and_push.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:41:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/02 01:54:27 by tinkotsu         ###   ########.fr       */
+/*   Updated: 2019/11/07 17:23:07 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "checker.h"
 
 static void	validate(char *str, int n)
 {

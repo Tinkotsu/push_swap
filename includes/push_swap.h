@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 16:31:03 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/30 23:42:09 by tinkotsu         ###   ########.fr       */
+/*   Updated: 2019/11/07 17:25:38 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ typedef struct	s_ps
 	t_st	*stack_b;
 }				t_ps;
 
-//отсортировать функции внизу, некрасиво :(
-
 void			all_free(t_ps *s);
 void			do_op(t_ps *s, size_t i);
 void			find_ops(t_ps *s, size_t index);
@@ -51,7 +49,7 @@ int				find_min(t_st *stack);
 int				find_max(t_st *stack);
 int				is_sorted(t_st *stack);
 int				main(int argc, char **argv);
-void			error(void); //уточнить про вывод ошибки
+void			error(void);
 void			pa(t_ps *s, int flag);
 void			pb(t_ps *s, int flag);
 void			sa(t_ps *s, int flag);
