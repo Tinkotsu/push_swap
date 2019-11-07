@@ -6,7 +6,7 @@
 #    By: ifran <ifran@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/24 16:10:58 by ifran             #+#    #+#              #
-#    Updated: 2019/11/07 18:42:50 by ifran            ###   ########.fr        #
+#    Updated: 2019/11/07 19:10:53 by ifran            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,17 +51,17 @@ $(CHECKER): $(CM_OBJS) $(CH_OBJS) $(CH_HEADER) $(CM_HEADER) $(LIB_HEADER)
 	@gcc $(FLAGS) -L libft -lft -o $(CHECKER) $(CH_OBJS) $(CM_OBJS)
 
 $(PUSH_SWAP): $(CM_OBJS) $(PS_OBJS) $(PS_HEADER) $(CM_HEADER) $(LIB_HEADER)
-	@gcc $(FLAGS) -L libft -lft -o $(PUSH_SWAP) $(PS_OBJS) $(CM_OBJS)
+	@gcc -g $(FLAGS) -L libft -lft -o $(PUSH_SWAP) $(PS_OBJS) $(CM_OBJS)
 
 $(OBJDIR)cm_%.o: $(SRCDIR)cm_%.c $(CM_HEADER)
 	@/bin/mkdir -p $(OBJDIR)
-	@gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
+	@gcc -g $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
 
 $(OBJDIR)ch%.o: $(SRCDIR)ch%.c $(CH_HEADER)
-	@gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
+	@gcc -g $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
 
 $(OBJDIR)p%.o: $(SRCDIR)p%.c $(PS_HEADER)
-	@gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
+	@gcc -g $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
 
 lib:
 	@$(COMP_LIB)

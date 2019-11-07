@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:53:08 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 17:53:09 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 18:46:12 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	sort_three(t_ps *s, int min, int max)
 		if (s->stack_a->next->n == min)
 			sa(s, 1);
 		else
-			rra(s, 1);			
+			rra(s, 1);
 	}
 }
 

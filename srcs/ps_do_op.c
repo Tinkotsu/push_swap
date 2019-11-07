@@ -6,13 +6,13 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:52:43 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 17:54:30 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 18:45:46 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void one(t_ps *s, t_st *temp)
+static void	one(t_ps *s, t_st *temp)
 {
 	size_t	i;
 
@@ -35,7 +35,7 @@ static void one(t_ps *s, t_st *temp)
 	pa(s, 1);
 }
 
-static void two(t_ps *s, t_st *temp)
+static void	two(t_ps *s, t_st *temp)
 {
 	size_t	i;
 
@@ -58,7 +58,7 @@ static void two(t_ps *s, t_st *temp)
 	pa(s, 1);
 }
 
-static void three(t_ps *s, t_st *temp)
+static void	three(t_ps *s, t_st *temp)
 {
 	size_t i;
 
@@ -73,7 +73,7 @@ static void three(t_ps *s, t_st *temp)
 	pa(s, 1);
 }
 
-static void four(t_ps *s, t_st *temp)
+static void	four(t_ps *s, t_st *temp)
 {
 	size_t i;
 
@@ -88,7 +88,7 @@ static void four(t_ps *s, t_st *temp)
 	pa(s, 1);
 }
 
-void	do_op(t_ps *s, size_t i)
+void		do_op(t_ps *s, size_t i)
 {
 	t_st *temp;
 

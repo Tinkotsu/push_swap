@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:52:56 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 17:52:57 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 18:47:04 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ static size_t	find_a_index(t_st *temp, t_st *temp_a)
 	return (a_index);
 }
 
-void		find_ops(t_ps *s, size_t index)
+void			find_ops(t_ps *s, size_t index)
 {
 	t_st	*temp_a;
 	t_st	*temp;

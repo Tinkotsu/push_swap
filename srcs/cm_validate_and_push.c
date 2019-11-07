@@ -6,11 +6,22 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:41:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 17:51:33 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 19:09:29 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "common.h"
+
+static char	*check_first(char *str, int *minus)
+{
+	if (*str == '+' || (*str == '-' && (*minus = 1)))
+		++str;
+	if (!*str)
+		error();
+	while (*str == '0')
+		++str;
+	return (str);
+}
 
 static void	validate(char *str, int n)
 {
@@ -19,21 +30,19 @@ static void	validate(char *str, int n)
 
 	minus = 0;
 	len = 0;
-	if (*str == '+' || (*str == '-' && (minus = 1)))
-		++str;
-	while (*str == '0')
-		++str;
+	str = check_first(str, &minus);
 	if (n == 0 && *str && *str != '0')
 		error();
-	if (*str)
-		len = ft_strlen(str);
+	if (!*str)
+			return ;
+	len = ft_strlen(str);
 	if (len > 10)
 		error();
 	if (len == 10 && !minus && ft_strcmp("2147483647", str) < 0)
 		error();
 	if (len == 10 && minus && ft_strcmp("2147483648", str) < 0)
 		error();
-	while(*str)
+	while (*str)
 	{
 		if (*str < '0' || *str > '9')
 			error();
@@ -70,7 +79,7 @@ static void	push_elem(t_ps *s, char *str)
 	}
 }
 
-void	validate_and_push(char *str, t_ps *s)
+void		validate_and_push(char *str, t_ps *s)
 {
 	int		i;
 	char	**split;

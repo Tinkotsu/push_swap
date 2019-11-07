@@ -6,20 +6,20 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:30:30 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 17:30:32 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 18:46:51 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int check_stack(t_ps *s)
+static int		check_stack(t_ps *s)
 {
 	if (is_sorted(s->stack_a))
 		return (1);
 	return (0);
 }
 
-static size_t find_elem(t_ps *s)
+static size_t	find_elem(t_ps *s)
 {
 	t_st	*temp;
 	size_t	min_ops;
@@ -40,7 +40,7 @@ static size_t find_elem(t_ps *s)
 	return (min_ops_i);
 }
 
-static void	last_roll(t_ps *s)
+static void		last_roll(t_ps *s)
 {
 	int		min;
 	size_t	len;
@@ -59,16 +59,16 @@ static void	last_roll(t_ps *s)
 	else
 	{
 		while (s->stack_a->n != min)
-			ra(s, 1);	
+			ra(s, 1);
 	}
 }
 
-void push_swap(t_ps *s)
+void			push_swap(t_ps *s)
 {
 	size_t i;
 
 	if (check_stack(s))
-		return;
+		return ;
 	leave_three(s);
 	while (s->stack_b)
 	{
