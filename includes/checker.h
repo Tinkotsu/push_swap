@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 17:23:13 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 17:23:17 by ifran            ###   ########.fr       */
+/*   Created: 2019/11/07 17:49:28 by ifran             #+#    #+#             */
+/*   Updated: 2019/11/07 17:58:13 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CHECKER_H
 
-#include "push_swap.h"
-#include "checker.h"
+# define CHECKER_H
 
-int		is_sorted(t_st *stack)
-{
-	t_st *temp;
+#include "common.h"
 
-	temp = stack;
-	while (temp->next)
-	{
-		if (temp->next->n < temp->n)
-			return (0);
-		temp = temp->next;
-	}
-	return (1);
-}
+int				main(int argc, char **argv);
+void			checker(t_ps *s);
+
+#endif

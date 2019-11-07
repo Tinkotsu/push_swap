@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_and_push.c                                :+:      :+:    :+:   */
+/*   cm_validate_and_push.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:41:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 17:23:07 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 17:51:33 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "checker.h"
+#include "common.h"
 
 static void	validate(char *str, int n)
 {

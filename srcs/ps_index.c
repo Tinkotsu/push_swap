@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ps_index.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 17:23:38 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 17:23:52 by ifran            ###   ########.fr       */
+/*   Created: 2019/11/07 17:53:02 by ifran             #+#    #+#             */
+/*   Updated: 2019/11/07 17:53:03 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "checker.h"
 
-void	pa(t_ps *s, int flag)
+void		do_index(t_ps *s)
 {
-	t_st *temp;
+	t_st	*temp_a;
+	t_st	*temp_b;
+	size_t	index;
 
-	if (s->stack_b)
+	temp_a = s->stack_a;
+	temp_b = s->stack_b;
+	index = 1;
+	while (temp_a)
 	{
-		temp = s->stack_b->next;
-		s->stack_b->next = s->stack_a;
-		s->stack_a = s->stack_b;
-		s->stack_b = temp;
+		temp_a->index = index;
+		temp_a = temp_a->next;
+		++index;
 	}
-	if (flag)
-		write(1, "pa\n", 3);
-}
-
-void	pb(t_ps *s, int flag)
-{
-	t_st *temp;
-
-	if (s->stack_a)
+	index = 1;
+	while (temp_b)
 	{
-		temp = s->stack_a->next;
-		s->stack_a->next = s->stack_b;
-		s->stack_b = s->stack_a;
-		s->stack_a = temp;
+		temp_b->index = index;
+		temp_b = temp_b->next;
+		++index;
 	}
-	if (flag)
-		write(1, "pb\n", 3);
 }

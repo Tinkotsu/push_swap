@@ -1,8 +1,18 @@
-//HEADER
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/07 18:02:11 by ifran             #+#    #+#             */
+/*   Updated: 2019/11/07 18:02:12 by ifran            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "checker.h"
 
-static int	check_op(t_ps *s, char *str, int i)
+static void	check_op(t_ps *s, char *str, int i)
 {
 	if (i == 3 && ft_strequ(str, "pa\n"))
 		pa(s, 0);
