@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 16:31:03 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 17:56:00 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 18:44:17 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "common.h"
 
 int				main(int argc, char **argv);
-void 			push_swap(t_ps *s);
+void			push_swap(t_ps *s);
 void			all_free(t_ps *s);
 void			do_op(t_ps *s, size_t i);
 void			find_ops(t_ps *s, size_t index);

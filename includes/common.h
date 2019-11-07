@@ -6,13 +6,13 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:45:34 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 17:53:51 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 18:44:06 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
+#ifndef COMMON_H
 
-# define STRUCTS_H
+# define COMMON_H
 
 # include "libft.h"
 
@@ -20,7 +20,7 @@ typedef	struct	s_st
 {
 	size_t		index;
 	int			n;
-	int			type_ops; //1: rb, ra; 2: rrb, rra; 3: rb, rra; 4: rrb, ra;
+	int			type_ops;
 	size_t		min_ops;
 	size_t		rrs;
 	size_t		rrrs;
@@ -52,6 +52,6 @@ void			rr(t_ps *s, int flag);
 void			rra(t_ps *s, int flag);
 void			rrb(t_ps *s, int flag);
 void			rrr(t_ps *s, int flag);
-void 			test(t_ps *s);
+void			test(t_ps *s);
 
 #endif
