@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 18:02:11 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 21:59:27 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 22:27:27 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void		checker(t_ps *s)
 		}
 	}
 	free(buff);
-	if (!s->stack_b && is_sorted(s->stack_a))
-		write(1, "OK\n", 3);
-	else
+	if (!s->stack_a || s->stack_b)
 		write(1, "KO\n", 3);
+	else if (is_sorted(s->stack_a))
+		write(1, "OK\n", 3);
 }

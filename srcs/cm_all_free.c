@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:52:01 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 17:52:02 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 22:32:23 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	all_free(t_ps *s)
 	}
 	while (s->stack_b)
 	{
-		temp = s->stack_a->next;
+		temp = s->stack_b->next;
 		free(s->stack_b);
 		s->stack_b = temp;
 	}

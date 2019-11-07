@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:30:30 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 20:41:20 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 22:37:08 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,10 @@ void			push_swap(t_ps *s)
 	size_t i;
 
 	if (check_stack(s))
+	{
+		s->debug = 0;
 		return ;
+	}
 	leave_three(s);
 	while (s->stack_b)
 	{
