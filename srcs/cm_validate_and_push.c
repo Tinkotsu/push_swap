@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:41:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 19:50:50 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 21:19:15 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	validate(char *str, int n)
 	if (n == 0 && *str && *str != '0')
 		error();
 	if (!*str)
-			return ;
+		return ;
 	len = ft_strlen(str);
 	if (len > 10)
 		error();
