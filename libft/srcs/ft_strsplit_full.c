@@ -6,16 +6,16 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 02:13:15 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 19:23:45 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 20:40:58 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			is_space(char const *str)
+static int			is_space(char c)
 {
-	if ((*str == ' ') || (*str == '\t') || (*str == '\r')
-			|| (*str == '\n') || (*str == '\v') || (*str == '\f'))
+	if ((c == ' ') || (c == '\t') || (c == '\r')
+			|| (c == '\n') || (c == '\v') || (c == '\f'))
 		return (1);
 	return (0);
 }
@@ -25,7 +25,7 @@ static int			word_len(char const *str)
 	int len;
 
 	len = 0;
-	while (*str && is_space(str))
+	while (*str && !is_space(*str))
 	{
 		++len;
 		++str;
@@ -40,11 +40,11 @@ static int			count_words(char const *str)
 	count = 0;
 	while (*str)
 	{
-		while (*str && is_space(str))
+		while (*str && is_space(*str))
 			++str;
 		if (*str)
 			++count;
-		while (*str && !is_space(str))
+		while (*str && !is_space(*str))
 			++str;
 	}
 	return (count);
@@ -59,7 +59,7 @@ static char			**strpush(char **arr, char const *str)
 	while (*str && count_words(str))
 	{
 		j = 0;
-		while (is_space(str))
+		while (is_space(*str))
 			++str;
 		arr[i] = (char *)malloc(sizeof(char) * (word_len(str) + 1));
 		if (!(arr[i]))
@@ -67,7 +67,7 @@ static char			**strpush(char **arr, char const *str)
 			ft_freep(arr, i);
 			return (NULL);
 		}
-		while (*str && !is_space(str))
+		while (*str && !is_space(*str))
 			arr[i][j++] = *str++;
 		arr[i][j] = '\0';
 		++i;
