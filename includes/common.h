@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:45:34 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 21:54:39 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 21:59:03 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct	s_ps
 	int		debug;
 }				t_ps;
 
+void			debug(t_ps *s);
 void			all_free(t_ps *s);
 void			validate_and_push(char *str, t_ps *s);
 int				is_sorted(t_st *stack);
@@ -53,6 +54,5 @@ void			rr(t_ps *s, int flag);
 void			rra(t_ps *s, int flag);
 void			rrb(t_ps *s, int flag);
 void			rrr(t_ps *s, int flag);
-void			test(t_ps *s);
 
 #endif

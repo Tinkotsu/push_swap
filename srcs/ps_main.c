@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 17:18:41 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 21:55:18 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 22:06:44 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ int			main(int argc, char **argv)
 		validate_and_push(argv[i], s);
 		++i;
 	}
+	if (s->debug)
+		debug(s);
 	push_swap(s);
+	if (s->debug)
+		debug(s);
 	all_free(s);
 	return (0);
 }

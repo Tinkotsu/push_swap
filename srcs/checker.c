@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 18:02:11 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 21:51:55 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 21:59:27 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void		checker(t_ps *s)
 		if (ft_strchr(buff, '\n'))
 		{
 			check_op(s, buff);
+			if (s->debug)
+				debug(s);
 			ft_strclr(buff);
 		}
 	}

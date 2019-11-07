@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:52:43 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 18:45:46 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 21:59:08 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,6 @@ void		do_op(t_ps *s, size_t i)
 		three(s, temp);
 	else if (temp->type_ops == 4)
 		four(s, temp);
+	if (s->debug)
+		debug(s);
 }
