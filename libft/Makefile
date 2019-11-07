@@ -43,7 +43,7 @@ $(NAME): $(OBJS)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c $(INCLUDES)
 	@/bin/mkdir -p $(OBJDIR)
-	@gcc $(FLAGS) -I $(INCLUDES) -c $< -o $@
+	@gcc -g $(FLAGS) -I $(INCLUDES) -c $< -o $@
 
 clean:
 	@/bin/rm -rf $(OBJDIR)

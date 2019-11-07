@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strsplit_full.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 02:13:15 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/31 16:45:33 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 19:23:45 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static char			**strpush(char **arr, char const *str)
 		arr[i] = (char *)malloc(sizeof(char) * (word_len(str) + 1));
 		if (!(arr[i]))
 		{
-			ft_freep(&arr, i);
+			ft_freep(arr, i);
 			return (NULL);
 		}
 		while (*str && !is_space(str))

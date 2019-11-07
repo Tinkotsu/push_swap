@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 02:13:15 by ifran             #+#    #+#             */
-/*   Updated: 2019/09/12 16:12:56 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 19:24:01 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static char			**strpush(char **arr, char const *str, char c)
 		arr[i] = (char *)malloc(sizeof(char) * (word_len(str, c) + 1));
 		if (!(arr[i]))
 		{
-			ft_freep(&arr, i);
+			ft_freep(arr, i);
 			return (NULL);
 		}
 		while (*str && *str != c)

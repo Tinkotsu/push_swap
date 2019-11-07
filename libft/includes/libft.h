@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 17:43:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/31 16:45:59 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 19:24:18 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ const char			*ft_clearing(const char *str);
 void				ft_swap(int *a, int *b);
 int					ft_isupper(int c);
 int					ft_islower(int c);
-void				ft_freep(char ***str, int i);
+void				ft_freep(char **str, int i);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));

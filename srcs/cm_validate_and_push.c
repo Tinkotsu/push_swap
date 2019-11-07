@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:41:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 19:09:29 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 19:22:45 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,5 @@ void		validate_and_push(char *str, t_ps *s)
 		++i;
 	}
 	i--;
-	ft_freep(&split, i);
+	ft_freep(split, i);
 }
