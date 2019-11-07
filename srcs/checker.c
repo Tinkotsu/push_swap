@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 18:02:11 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 21:14:36 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 21:17:20 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	check_op(t_ps *s, char *str)
 		rrb(s, 0);
 	else if (ft_strequ(str, "rrr\n"))
 		rrr(s, 0);
-	else
+	else if (ft_strlen(str) > 1)
 		error();
 }
 
