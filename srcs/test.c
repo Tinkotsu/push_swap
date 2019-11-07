@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/07 17:30:42 by ifran             #+#    #+#             */
+/*   Updated: 2019/11/07 17:31:58 by ifran            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include "push_swap.h"
 
@@ -10,16 +22,18 @@ void test(t_ps *s)
 	temp_b = s->stack_b;
 	if (!temp_a && !temp_b)
 		return ;
-	printf("PRINTING STACK A\n");
+	ft_putstr("PRINTING STACK A\n");
     while (temp_a)
     {
-		printf("%d\n", temp_a->n);
+		ft_putnbr(temp_a->n);
+		write(1, "\n", 1);
 		temp_a = temp_a->next;
     }
-	printf("PRINTING STACK B\n");
+	ft_putstr("PRINTING STACK B\n");
     while (temp_b)
     {
-		printf("%d\n", temp_b->n);
+		ft_putnbr(temp_b->n);
+		write(1, "\n", 1);
 		temp_b = temp_b->next;
     }
 }
