@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:30:30 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 22:37:08 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/08 12:24:03 by tinkotsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ static size_t	find_elem(t_ps *s)
 	size_t	min_ops;
 	size_t	min_ops_i;
 
-	temp = s->stack_b;
-	min_ops = 4294967295;
+	find_ops(s, s->stack_b->index);
+	min_ops = s->stack_b->min_ops;
+	min_ops_i = s->stack_b->index;
+	temp = s->stack_b->next;
 	while (temp)
 	{
 		find_ops(s, temp->index);
