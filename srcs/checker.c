@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 18:02:11 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 22:41:15 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/08 13:12:24 by tinkotsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,23 @@ static void	check_op(t_ps *s, char *str)
 void		checker(t_ps *s)
 {
 	char	*buff;
+	int		i;
 
-	if (!(buff = ft_strnew(4)))
+	if (!(buff = ft_strnew(5)))
 		error();
-	while (read(0, buff, 4))
+	i = 0;
+	while (read(0, buff, 1))
 	{
-		if (ft_strchr(buff, '\n'))
+		++i;
+		++buff;
+		if (*(buff - 1) == '\n')
 		{
+			buff -= i;
 			check_op(s, buff);
 			if (s->debug)
 				debug(s);
 			ft_strclr(buff);
+			i = 0;
 		}
 	}
 	free(buff);
