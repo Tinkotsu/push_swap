@@ -6,7 +6,7 @@
 #    By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/24 16:10:58 by ifran             #+#    #+#              #
-#    Updated: 2019/11/08 13:52:27 by tinkotsu         ###   ########.fr        #
+#    Updated: 2019/11/08 14:20:18 by tinkotsu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,12 +45,12 @@ LIB_HEADER = ./libft/includes/libft.h
 COMP_LIB = make -C libft/
 FLAGS = -Wall -Wextra -Werror
 
-all: lib ./libft/libft.a $(CHECKER) $(PUSH_SWAP)
+all: lib $(CHECKER) $(PUSH_SWAP)
 
-$(CHECKER): lib $(CM_OBJS) $(CH_OBJS) $(CH_HEADER) $(CM_HEADER) $(LIB_HEADER)
+$(CHECKER): ./libft/libft.a $(CM_OBJS) $(CH_OBJS) $(CH_HEADER) $(CM_HEADER) $(LIB_HEADER)
 	@gcc $(FLAGS) -L libft -lft -o $(CHECKER) $(CH_OBJS) $(CM_OBJS)
 
-$(PUSH_SWAP): lib $(CM_OBJS) $(PS_OBJS) $(PS_HEADER) $(CM_HEADER) $(LIB_HEADER)
+$(PUSH_SWAP): ./libft/libft.a $(CM_OBJS) $(PS_OBJS) $(PS_HEADER) $(CM_HEADER) $(LIB_HEADER)
 	@gcc $(FLAGS) -L libft -lft -o $(PUSH_SWAP) $(PS_OBJS) $(CM_OBJS)
 
 $(OBJDIR)cm_%.o: $(SRCDIR)cm_%.c $(CM_HEADER)
@@ -63,8 +63,10 @@ $(OBJDIR)ch%.o: $(SRCDIR)ch%.c $(CH_HEADER)
 $(OBJDIR)p%.o: $(SRCDIR)p%.c $(PS_HEADER)
 	@gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
 
+./libft/libft.a: lib
+
 lib:
-	@$(COMP_LIB)
+	$(COMP_LIB)
 
 clean:
 	@/bin/rm -rf $(OBJDIR)
