@@ -6,7 +6,7 @@
 /*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 18:02:11 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/08 13:12:24 by tinkotsu         ###   ########.fr       */
+/*   Updated: 2019/11/08 13:16:43 by tinkotsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void		checker(t_ps *s)
 	char	*buff;
 	int		i;
 
-	if (!(buff = ft_strnew(5)))
+	if (!(buff = ft_strnew(4)))
 		error();
 	i = 0;
 	while (read(0, buff, 1))
