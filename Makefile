@@ -6,7 +6,7 @@
 #    By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/24 16:10:58 by ifran             #+#    #+#              #
-#    Updated: 2019/11/08 11:54:35 by tinkotsu         ###   ########.fr        #
+#    Updated: 2019/11/08 13:22:13 by tinkotsu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ CM_HEADER = ./includes/common.h
 LIB_HEADER = ./libft/includes/libft.h
 
 COMP_LIB = make -C libft/
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g 
 
 all: lib ./libft/libft.a $(CHECKER) $(PUSH_SWAP)
 
