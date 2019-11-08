@@ -42,7 +42,7 @@ PS_HEADER = ./includes/push_swap.h
 CM_HEADER = ./includes/common.h
 LIB_HEADER = ./libft/includes/libft.h
 
-COMP_LIB = make -C libft/
+COMP_LIB = @make -C libft/
 FLAGS = -Wall -Wextra -Werror
 
 all: lib $(CHECKER) $(PUSH_SWAP)
