@@ -6,7 +6,7 @@
 /*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:30:30 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/08 12:24:03 by tinkotsu         ###   ########.fr       */
+/*   Updated: 2019/11/08 12:32:06 by tinkotsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ static size_t	find_elem(t_ps *s)
 	size_t	min_ops;
 	size_t	min_ops_i;
 
-	find_ops(s, s->stack_b->index);
+	find_ops(s, s->stack_b);
 	min_ops = s->stack_b->min_ops;
 	min_ops_i = s->stack_b->index;
 	temp = s->stack_b->next;
 	while (temp)
 	{
-		find_ops(s, temp->index);
+		find_ops(s, temp);
 		if (temp->min_ops < min_ops)
 		{
 			min_ops = temp->min_ops;
