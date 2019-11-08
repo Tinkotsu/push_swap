@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ifran <ifran@student.42.fr>                +#+  +:+       +#+         #
+#    By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/24 16:10:58 by ifran             #+#    #+#              #
-#    Updated: 2019/11/07 22:31:56 by ifran            ###   ########.fr        #
+#    Updated: 2019/11/08 11:54:35 by tinkotsu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,10 +47,10 @@ FLAGS = -Wall -Wextra -Werror
 
 all: lib ./libft/libft.a $(CHECKER) $(PUSH_SWAP)
 
-$(CHECKER): $(CM_OBJS) $(CH_OBJS) $(CH_HEADER) $(CM_HEADER) $(LIB_HEADER)
+$(CHECKER): lib $(CM_OBJS) $(CH_OBJS) $(CH_HEADER) $(CM_HEADER) $(LIB_HEADER)
 	@gcc $(FLAGS) -L libft -lft -o $(CHECKER) $(CH_OBJS) $(CM_OBJS)
 
-$(PUSH_SWAP): $(CM_OBJS) $(PS_OBJS) $(PS_HEADER) $(CM_HEADER) $(LIB_HEADER)
+$(PUSH_SWAP): lib $(CM_OBJS) $(PS_OBJS) $(PS_HEADER) $(CM_HEADER) $(LIB_HEADER)
 	@gcc $(FLAGS) -L libft -lft -o $(PUSH_SWAP) $(PS_OBJS) $(CM_OBJS)
 
 $(OBJDIR)cm_%.o: $(SRCDIR)cm_%.c $(CM_HEADER)
