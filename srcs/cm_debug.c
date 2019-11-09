@@ -6,7 +6,7 @@
 /*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:30:42 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/09 19:26:54 by tinkotsu         ###   ########.fr       */
+/*   Updated: 2019/11/09 21:06:26 by tinkotsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@ static void		put(t_st *temp_a, t_st *temp_b)
 {
 	while (temp_a || temp_b)
 	{
+		ft_putchar('\t');
 		if (temp_a)
 		{
-			ft_putchar('\t');
 			ft_putnbr(temp_a->n);
 			temp_a = temp_a->next;
 		}
-		else
-			ft_putchar('\t');
 		ft_putstr("\t    |\t");
 		if (temp_b)
 		{
