@@ -6,7 +6,7 @@
 /*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:30:30 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/08 12:32:06 by tinkotsu         ###   ########.fr       */
+/*   Updated: 2019/11/09 19:29:24 by tinkotsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void			push_swap(t_ps *s)
 		return ;
 	}
 	leave_three(s);
+	if (s->debug)
+		debug(s);
 	while (s->stack_b)
 	{
 		do_index(s);

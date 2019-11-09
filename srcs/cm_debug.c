@@ -3,16 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   cm_debug.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:30:42 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 22:05:13 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/09 19:26:54 by tinkotsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "common.h"
 
-void	debug(t_ps *s)
+static void		put(t_st *temp_a, t_st *temp_b)
+{
+	while (temp_a || temp_b)
+	{
+		if (temp_a)
+		{
+			ft_putchar('\t');
+			ft_putnbr(temp_a->n);
+			temp_a = temp_a->next;
+		}
+		else
+			ft_putchar('\t');
+		ft_putstr("\t    |\t");
+		if (temp_b)
+		{
+			ft_putchar('\t');
+			ft_putnbr(temp_b->n);
+			temp_b = temp_b->next;
+		}
+		write(1, "\n", 1);
+	}
+}
+
+void			debug(t_ps *s)
 {
 	t_st *temp_a;
 	t_st *temp_b;
@@ -21,20 +44,8 @@ void	debug(t_ps *s)
 	temp_b = s->stack_b;
 	if (!temp_a && !temp_b)
 		return ;
-	ft_putstr("----------------");
-	ft_putstr("\nPRINTING STACK A:\n");
-	while (temp_a)
-	{
-		ft_putnbr(temp_a->n);
-		write(1, "\n", 1);
-		temp_a = temp_a->next;
-	}
-	ft_putstr("PRINTING STACK B:\n");
-	while (temp_b)
-	{
-		ft_putnbr(temp_b->n);
-		write(1, "\n", 1);
-		temp_b = temp_b->next;
-	}
-	ft_putstr("----------------\n");
+	ft_putstr("------------------------------------------");
+	ft_putstr("\nPRINTING STACK A:\tPRINTING STACK B:\n\n");
+	put(temp_a, temp_b);
+	ft_putstr("------------------------------------------\n");
 }
