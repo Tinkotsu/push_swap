@@ -6,7 +6,7 @@
 /*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:30:30 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/09 19:29:24 by tinkotsu         ###   ########.fr       */
+/*   Updated: 2019/11/09 19:36:22 by tinkotsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static void		last_roll(t_ps *s)
 	temp = s->stack_a;
 	len = stack_len(s->stack_a);
 	min = find_min(s->stack_a);
+	do_index(s);
 	while (temp->n != min)
 		temp = temp->next;
 	if (temp->index > len / 2 + len % 2)

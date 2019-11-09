@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cm_reverse_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:25:13 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 21:24:50 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/09 19:37:16 by tinkotsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rra(t_ps *s, int flag)
 	t_st *head;
 	t_st *tail;
 
-	if (!s->stack_a)
+	if (!s->stack_a || !s->stack_a->next)
 		return ;
 	head = s->stack_a;
 	while (head->next)
@@ -37,7 +37,7 @@ void	rrb(t_ps *s, int flag)
 	t_st *head;
 	t_st *tail;
 
-	if (!s->stack_b)
+	if (!s->stack_b || !s->stack_b->next)
 		return ;
 	head = s->stack_b;
 	while (head->next)
