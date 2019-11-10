@@ -34,7 +34,8 @@ int		main(int argc, char **argv)
 		return (0);
 	if (s->debug)
 		debug(s);
-	checker(s);
+	if (s->stack_a)
+		checker(s);
 	all_free(s);
 	return (0);
 }
