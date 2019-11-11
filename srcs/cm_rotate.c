@@ -6,7 +6,7 @@
 /*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:24:56 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 21:25:32 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/11 16:11:07 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ra(t_ps *s, int flag)
 {
 	t_st *temp;
 
-	if (!s->stack_a)
+	if (!s->stack_a || !s->stack_a->next)
 		return ;
 	temp = s->stack_a;
 	while (temp->next)
@@ -32,7 +32,7 @@ void	rb(t_ps *s, int flag)
 {
 	t_st *temp;
 
-	if (!s->stack_b)
+	if (!s->stack_b || !s->stack_b->next)
 		return ;
 	temp = s->stack_b;
 	while (temp->next)
