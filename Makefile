@@ -6,7 +6,7 @@
 #    By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/24 16:10:58 by ifran             #+#    #+#              #
-#    Updated: 2019/11/08 14:20:18 by tinkotsu         ###   ########.fr        #
+#    Updated: 2019/11/22 03:31:08 by tinkotsu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,22 +48,20 @@ FLAGS = -Wall -Wextra -Werror
 all: lib $(CHECKER) $(PUSH_SWAP)
 
 $(CHECKER): ./libft/libft.a $(CM_OBJS) $(CH_OBJS) $(CH_HEADER) $(CM_HEADER) $(LIB_HEADER)
-	@gcc $(FLAGS) -L libft -lft -o $(CHECKER) $(CH_OBJS) $(CM_OBJS)
+	gcc $(FLAGS) -L libft -lft -o $(CHECKER) $(CH_OBJS) $(CM_OBJS)
 
 $(PUSH_SWAP): ./libft/libft.a $(CM_OBJS) $(PS_OBJS) $(PS_HEADER) $(CM_HEADER) $(LIB_HEADER)
-	@gcc $(FLAGS) -L libft -lft -o $(PUSH_SWAP) $(PS_OBJS) $(CM_OBJS)
+	gcc $(FLAGS) -L libft -lft -o $(PUSH_SWAP) $(PS_OBJS) $(CM_OBJS)
 
 $(OBJDIR)cm_%.o: $(SRCDIR)cm_%.c $(CM_HEADER)
-	@/bin/mkdir -p $(OBJDIR)
-	@gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
+	/bin/mkdir -p $(OBJDIR)
+	gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
 
 $(OBJDIR)ch%.o: $(SRCDIR)ch%.c $(CH_HEADER)
-	@gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
+	gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
 
 $(OBJDIR)p%.o: $(SRCDIR)p%.c $(PS_HEADER)
-	@gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
-
-./libft/libft.a: lib
+	gcc $(FLAGS) -I./includes -I./libft/includes -c $< -o $@
 
 lib:
 	$(COMP_LIB)

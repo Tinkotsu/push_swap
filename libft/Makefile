@@ -38,12 +38,12 @@ OBJS	= $(addprefix $(OBJDIR), $(ALL_OBJ))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rc $(NAME) $(OBJS)
-	@ranlib $(NAME)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c $(INCLUDES)
-	@/bin/mkdir -p $(OBJDIR)
-	@gcc $(FLAGS) -I $(INCLUDES) -c $< -o $@
+	/bin/mkdir -p $(OBJDIR)
+	gcc $(FLAGS) -I $(INCLUDES) -c $< -o $@
 
 clean:
 	@/bin/rm -rf $(OBJDIR)
